@@ -121,32 +121,34 @@ def main() -> None:
     gh = GitHub()
     erros = []
 
-    for fonte in config["fontes"]:
-        st = estado.setdefault(fonte["id"], {})
-        try:
-            novos = TIPOS[fonte["tipo"]](fonte, st, simular)
-        except Exception as e:  # uma fonte fora do ar não derruba as outras
-            erros.append(f"{fonte['id']}: {e}")
-            print(f"[erro] {fonte['id']}: {e}")
-            continue
-        print(f"[{fonte['id']}] {len(novos)} item(ns)")
-        for it in novos[:8] if simular else []:
-            print(f"   - {it['data']} {it['titulo'][:100]}")
-        if simular or not novos:
-            continue
+    try:
+        for fonte in config["fontes"]:
+            st = estado.setdefault(fonte["id"], {})
+            try:
+                novos = TIPOS[fonte["tipo"]](fonte, st, simular)
+            except Exception as e:  # uma fonte fora do ar não derruba as outras
+                erros.append(f"{fonte['id']}: {e}")
+                print(f"[erro] {fonte['id']}: {e}")
+                continue
+            print(f"[{fonte['id']}] {len(novos)} item(ns)")
+            for it in novos[:8] if simular else []:
+                print(f"   - {it['data']} {it['titulo'][:100]}")
+            if simular or not novos:
+                continue
 
-        rotulos = ["radar", fonte.get("rotulo", "ufpr")]
-        if len(novos) <= MAX_ISSUES_SEPARADAS:
+            rotulos = ["radar", fonte.get("rotulo", "ufpr")]
+            if len(novos) <= MAX_ISSUES_SEPARADAS:
+                for it in novos:
+                    gh.abrir_issue(f"📡 {it['titulo'][:200]}", corpo_issue(fonte, [it]), rotulos)
+            else:
+                gh.abrir_issue(f"📡 {len(novos)} novidades em {fonte['nome']}", corpo_issue(fonte, novos), rotulos)
             for it in novos:
-                gh.abrir_issue(f"📡 {it['titulo'][:200]}", corpo_issue(fonte, [it]), rotulos)
-        else:
-            gh.abrir_issue(f"📡 {len(novos)} novidades em {fonte['nome']}", corpo_issue(fonte, novos), rotulos)
-        for it in novos:
-            log.insert(0, {**it, "fonte": fonte["nome"], "visto_em": str(hoje())})
+                log.insert(0, {**it, "fonte": fonte["nome"], "visto_em": str(hoje())})
 
-    if not simular:
-        salvar_json(ARQ_ESTADO, estado)
-        salvar_json(ARQ_LOG, log[:40])
+    finally:  # salva o que já foi visto mesmo se algo falhar no meio
+        if not simular:
+            salvar_json(ARQ_ESTADO, estado)
+            salvar_json(ARQ_LOG, log[:40])
     if erros:
         print("Fontes com erro (o radar continua nas próximas execuções):\n  " + "\n  ".join(erros))
 

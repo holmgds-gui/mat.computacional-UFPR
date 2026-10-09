@@ -21,7 +21,7 @@ Este documento mapeia cada sistema da UFPR, mostra como outros estudantes se con
 
 ### 1. Prazos do UFPR Virtual no seu Google Calendar (5 minutos, sem código)
 
-O Moodle gera um link de calendário pessoal que o Google Calendar consegue **assinar**. Tarefas e questionários com prazo aparecem sozinhos.
+O Moodle costuma gerar um link de calendário pessoal que o Google Calendar consegue **assinar**, e então tarefas e questionários com prazo aparecem sozinhos. Ainda não confirmei a opção no UFPR Virtual; se ela não aparecer, a administração pode ter desligado.
 
 1. Entre no [UFPR Virtual](https://ufprvirtual.ufpr.br/) → **Calendário** → **Importar ou exportar calendários** → **Exportar calendário**.
 2. Escolha **Todos os cursos** e **Eventos recentes e próximos**, e clique em **Obter URL do calendário**.

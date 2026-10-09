@@ -75,6 +75,8 @@ O formulário é convertido em dados, entra no calendário e no painel, e a Issu
 
 ### Rodar localmente
 
+O robô faz commits todos os dias. **Antes de editar, sempre rode `git pull`**, senão o seu push será recusado.
+
 ```bash
 pip install -r requirements.txt
 python scripts/gerar_calendario.py      # gera site/*.ics

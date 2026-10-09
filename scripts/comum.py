@@ -6,6 +6,7 @@ import datetime as dt
 import json
 import os
 import re
+import sys
 import time
 import unicodedata
 import urllib.error
@@ -13,6 +14,11 @@ import urllib.request
 from pathlib import Path
 
 import yaml
+
+# Terminais do Windows não usam UTF-8 por padrão; sem isso, emojis e acentos quebram o print.
+for _fluxo in (sys.stdout, sys.stderr):
+    if hasattr(_fluxo, "reconfigure"):
+        _fluxo.reconfigure(encoding="utf-8")
 
 RAIZ = Path(__file__).resolve().parent.parent
 DADOS = RAIZ / "dados"
@@ -116,6 +122,7 @@ class GitHub:
         "radar": "0e8a16", "prazo": "d93f0b", "avaliacao": "b60205", "ic": "5319e7",
         "extensao": "1d76db", "evento": "fbca04", "curso": "006b75", "graduacao": "c5def5",
         "setor": "bfdadc", "ufpr": "ededed", "lembrete": "e99695",
+        "nova-avaliacao": "b60205", "nova-atividade": "1d76db",
     }
 
     def __init__(self) -> None:
@@ -148,11 +155,17 @@ class GitHub:
                 raise
         self._rotulos_ok.add(nome)
 
-    def abrir_issue(self, titulo: str, corpo: str, rotulos: list[str]) -> None:
+    def abrir_issue(self, titulo: str, corpo: str, rotulos: list[str]) -> bool:
+        """Abre uma Issue. Devolve False (sem levantar erro) se a API falhar."""
         if not self.ativo:
             print(f"  [simulação] Issue: {titulo}  {rotulos}")
-            return
-        for r in rotulos:
-            self._garantir_rotulo(r)
-        resp = self._chamar("POST", "/issues", {"title": titulo, "body": corpo, "labels": rotulos})
+            return False
+        try:
+            for r in rotulos:
+                self._garantir_rotulo(r)
+            resp = self._chamar("POST", "/issues", {"title": titulo, "body": corpo, "labels": rotulos})
+        except (urllib.error.URLError, TimeoutError) as e:
+            print(f"  [erro GitHub] não abriu '{titulo}': {e}")
+            return False
         print(f"  Issue aberta: #{resp['number']} {titulo}")
+        return True

@@ -19,7 +19,9 @@ jobs:
     if: >-
       github.event.issue.user.login == github.repository_owner &&
       (contains(github.event.issue.labels.*.name, 'nova-avaliacao') ||
-       contains(github.event.issue.labels.*.name, 'nova-atividade'))
+       contains(github.event.issue.labels.*.name, 'nova-atividade') ||
+       startsWith(github.event.issue.title, 'Nova avaliação') ||
+       startsWith(github.event.issue.title, 'Nova atividade'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,7 +34,7 @@ jobs:
         id: conv
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-          FORMULARIO: ${{ contains(github.event.issue.labels.*.name, 'nova-avaliacao') && 'avaliacao' || 'atividade' }}
+          FORMULARIO: ${{ (contains(github.event.issue.labels.*.name, 'nova-avaliacao') || startsWith(github.event.issue.title, 'Nova avaliação')) && 'avaliacao' || 'atividade' }}
         run: |
           set +e
           python scripts/issue_para_dados.py > resposta.txt

@@ -136,10 +136,9 @@ def lembretes(h: dt.date) -> None:
             continue
         datas = f"{ini:%d/%m/%Y}" + (f" a {fim:%d/%m/%Y}" if fim != ini else "")
         corpo = f"**{titulo}**\n\n📅 {datas} ({quando(ini, fim, h)})\n\n{obs}\n\n_Lembrete automático gerado a partir de `dados/`._"
-        gh.abrir_issue(f"⏰ {titulo} — {ini:%d/%m}", corpo, rotulos)
-        enviados[chave] = str(h)
-    if gh.ativo:
-        salvar_json(ARQ_ALERTAS, enviados)
+        if gh.abrir_issue(f"⏰ {titulo} — {ini:%d/%m}", corpo, rotulos):
+            enviados[chave] = str(h)
+            salvar_json(ARQ_ALERTAS, enviados)
 
 
 def main() -> None:
