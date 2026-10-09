@@ -9,7 +9,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 **Hoje:** 08/10/2026 (quinta) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 13:30 CMI021 Cálculo I · 15:30 CI185 Fundamentos de Programação II
+**Aulas de hoje:** 07:30 CE009 Introdução à Estatística · 09:30 CF109 Física I · 15:30 CI1068 Circuitos Digitais
 
 ### ⏳ Próximos 30 dias
 
@@ -23,12 +23,12 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 | Componente | Progresso |
 |---|---|
-| Obrigatórias | `███░░░░░░░░░░░░░░░░░ 300/1920h (16%)` + 300h cursando |
-| Optativas | `░░░░░░░░░░░░░░░░░░░░ 0/300h (0%)` |
+| Obrigatórias | `███░░░░░░░░░░░░░░░░░ 300/1920h (16%)` + 120h cursando |
+| Optativas | `░░░░░░░░░░░░░░░░░░░░ 0/300h (0%)` + 180h cursando |
 | Atividades formativas | `░░░░░░░░░░░░░░░░░░░░ 0/200h (0%)` |
 | Extensão (ACE) | `░░░░░░░░░░░░░░░░░░░░ 0/242h (0%)` · ACE IV: 0/90h |
 
-> ⚠️ Situação a conferir no SIGA: CI182, CMI011, CMI012, CMI013, CMI014, CE009, CI185, CMI021, CMI022, CMI023. Depois, marque `confirmado: true` em `dados/grade.yml`.
+> ⚠️ Situação a conferir no SIGA: CI182, CMI011, CMI012, CMI013, CMI014. Depois, marque `confirmado: true` em `dados/grade.yml`.
 
 ### 📡 Últimas do radar
 

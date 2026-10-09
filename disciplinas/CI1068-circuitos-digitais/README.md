@@ -1,25 +1,20 @@
-# CI185 — Fundamentos de Programação de Computadores II
+# CI1068 — Circuitos Digitais
 
 | | |
 |---|---|
 | **Carga horária** | 60h |
 | **Departamento** | Departamento de Informática |
-| **Periodização** | 2º período |
-| **Pré-requisitos** | CI182 |
-| **Turma 2026-2** | Ter, Qui, 15:30–17:30 |
-| **Professor(a)** | a definir |
-| **Ficha oficial** | [ementa (PDF)](https://web.inf.ufpr.br/dinf/wp-content/uploads/sites/2/2020/05/CI185-FUNDAMENTOS-DE-PROGRAMA%C3%87%C3%83O-DE-COMPUTADORES-II.pdf) |
+| **Periodização** | eletiva |
+| **Pré-requisitos** | — |
+| **Turma 2026-2** | BCC1 · Ter, Qui, 15:30–17:30 |
+| **Professor(a)** | Armando Luiz Nicolini Delgado (conferir) |
+| **Sala** | ver ensalamento |
+| **Ficha oficial** | — |
 | **UFPR Virtual** | _cole aqui o link da página da disciplina_ |
 
 ## Ementa
 
-Programação em linguagem de alto nível. Noções de eficiência computacional. Estudo de problemas e algoritmos fundamentais. Uso de estruturas de dados nativas da linguagem.
-
-## Bibliografia básica
-
-- K.D. Lee e S. Hubbard. Data Structures and Algorithms with Python. 2015.
-- M. Lutz e D. Ascher. Learning Python. 3rd edition. 2007.
-- Marco Medina e Cristina Fertig. Algoritmos e Programação: Teoria e Prática. 2a. edição. Novatec Editora Ltda., 2006
+_Copie a ementa da ficha oficial._
 
 ## Avaliações
 

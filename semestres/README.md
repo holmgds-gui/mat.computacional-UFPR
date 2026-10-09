@@ -5,7 +5,7 @@
 | Semestre | Período | Disciplinas | CH |
 |---|---|---|---|
 | [2026-1](2026-1.md) | 1º | CI182, CMI011, CMI012, CMI013, CMI014 | 300h |
-| [2026-2](2026-2.md) | 2º | CE009, CI185, CMI021, CMI022, CMI023 | 300h |
+| [2026-2](2026-2.md) | 2º | CE009, CF109, CI1164, TT080, TT081, CI1068 (eletiva) | 360h |
 
 ## Como começar um semestre novo
 

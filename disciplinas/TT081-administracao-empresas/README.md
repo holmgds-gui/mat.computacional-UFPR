@@ -1,25 +1,20 @@
-# CMI022 — Álgebra Linear
+# TT081 — Administração de Empresas
 
 | | |
 |---|---|
 | **Carga horária** | 60h |
-| **Departamento** | Departamento de Matemática |
-| **Periodização** | 2º período |
+| **Departamento** | Departamento de Transportes |
+| **Periodização** | optativa |
 | **Pré-requisitos** | — |
-| **Turma 2026-2** | Seg, Qua, 13:30–15:30 |
-| **Professor(a)** | Profª Paula |
-| **Ficha oficial** | [ementa (PDF)](https://mat.ufpr.br/documentos/ementas/matematica/CMI022.pdf) |
+| **Turma 2026-2** | AMB · Seg, Qua, 07:30–09:30 |
+| **Professor(a)** | Adriana Maria Miguel Peixe |
+| **Sala** | PG-11 |
+| **Ficha oficial** | — |
 | **UFPR Virtual** | _cole aqui o link da página da disciplina_ |
 
 ## Ementa
 
-Espaços vetoriais. Transformações lineares. Autovalores e autovetores. Diagonalização de operadores. Espaços com produto interno. Operadores sobre espaços com produto interno. Formas bilineares. Aplicações.
-
-## Bibliografia básica
-
-- Leon, S. J. Álgebra Linear com Aplicações, 4a. ed. Rio de Janeiro: Editora LTC, 1999.
-- Boldrini, J. L. et al. Álgebra Linear. 3a. ed. São Paulo: Habra, 1986.
-- Lima, E. L. Álgebra Linear, Rio de Janeiro: IMPA, 1995
+_Copie a ementa da ficha oficial._
 
 ## Avaliações
 

@@ -6,8 +6,9 @@
 | **Departamento** | Departamento de Estatística |
 | **Periodização** | 2º período |
 | **Pré-requisitos** | — |
-| **Turma 2026-2** | Seg, Qua, 15:30–17:30 |
-| **Professor(a)** | a definir |
+| **Turma 2026-2** | ECIVIL-B · Ter, Qui, 07:30–09:30 |
+| **Professor(a)** | Jomar Antonio Camarinha Filho |
+| **Sala** | PA — Multimídia DEST |
 | **Ficha oficial** | [ementa (PDF)](https://matind.ufpr.br/wp-content/uploads/2021/10/CE009-Introducao-a-Estatistica.pdf) |
 | **UFPR Virtual** | _cole aqui o link da página da disciplina_ |
 

@@ -14,7 +14,7 @@ from comum import DADOS, RAIZ, ler_yaml, slug
 
 DEPTOS = {"DMAT": "Departamento de Matemática", "DINF": "Departamento de Informática",
           "DEST": "Departamento de Estatística", "DFIS": "Departamento de Física",
-          "DEP": "Departamento de Engenharia de Produção"}
+          "DEP": "Departamento de Engenharia de Produção", "DTT": "Departamento de Transportes"}
 NOME_DIA = {"seg": "Seg", "ter": "Ter", "qua": "Qua", "qui": "Qui", "sex": "Sex", "sab": "Sáb"}
 
 
@@ -24,9 +24,10 @@ def localizar(codigo: str):
         for d in lista:
             if d["codigo"] == codigo:
                 return d, periodo
-    for d in grade.get("optativas_planejadas") or []:
-        if d["codigo"] == codigo:
-            return {**d, "ch": d.get("ch", 60), "depto": d.get("depto", "")}, "optativa"
+    for grupo in ("optativas_planejadas", "eletivas"):
+        for d in grade.get(grupo) or []:
+            if d["codigo"] == codigo:
+                return {**d, "ch": d.get("ch", 60), "depto": d.get("depto", "")}, grupo.split("_")[0].rstrip("s")
     raise SystemExit(f"{codigo} não está em dados/grade.yml")
 
 
@@ -42,7 +43,7 @@ def aula_atual(codigo: str):
 
 def readme(d: dict, periodo, ementa: str = "", biblio: str = "") -> str:
     semestre, aula = aula_atual(d["codigo"])
-    periodo_txt = f"{periodo}º período" if isinstance(periodo, int) else "optativa"
+    periodo_txt = f"{periodo}º período" if isinstance(periodo, int) else periodo
     linhas = [
         f"# {d['codigo']} — {d['nome']}",
         "",
@@ -55,8 +56,9 @@ def readme(d: dict, periodo, ementa: str = "", biblio: str = "") -> str:
     ]
     if aula:
         dias = ", ".join(NOME_DIA[x] for x in aula["dias"])
-        linhas += [f"| **Turma {semestre}** | {dias}, {aula['inicio']}–{aula['fim']} |",
-                   f"| **Professor(a)** | {aula['professor']} |"]
+        linhas += [f"| **Turma {semestre}** | {aula.get('turma', '')} · {dias}, {aula['inicio']}–{aula['fim']} |",
+                   f"| **Professor(a)** | {aula['professor']} |",
+                   f"| **Sala** | {aula.get('sala', '—')} |"]
     linhas += [
         f"| **Ficha oficial** | [ementa (PDF)]({d['ementa']}) |" if d.get("ementa") else "| **Ficha oficial** | — |",
         "| **UFPR Virtual** | _cole aqui o link da página da disciplina_ |",

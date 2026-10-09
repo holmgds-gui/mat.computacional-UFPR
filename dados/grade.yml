@@ -20,19 +20,19 @@ semestres:
     - {codigo: CMI014, nome: Tendências em Matemática Industrial, ch: 30, depto: DMAT, status: concluida, confirmado: false, pasta: CMI014-tendencias-matematica-industrial,
        ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI014.pdf"}
   2:
-    - {codigo: CE009,  nome: Introdução à Estatística, ch: 60, depto: DEST, status: cursando, confirmado: false, pasta: CE009-introducao-estatistica,
+    - {codigo: CE009,  nome: Introdução à Estatística, ch: 60, depto: DEST, status: cursando, confirmado: true, pasta: CE009-introducao-estatistica,
        ementa: "https://matind.ufpr.br/wp-content/uploads/2021/10/CE009-Introducao-a-Estatistica.pdf"}
-    - {codigo: CI185,  nome: Fundamentos de Programação de Computadores II, ch: 60, depto: DINF, status: cursando, confirmado: false, pasta: CI185-fundamentos-programacao-2, prereq: [CI182],
+    - {codigo: CI185,  nome: Fundamentos de Programação de Computadores II, ch: 60, depto: DINF, status: pendente, prereq: [CI182],
        ementa: "https://web.inf.ufpr.br/dinf/wp-content/uploads/sites/2/2020/05/CI185-FUNDAMENTOS-DE-PROGRAMA%C3%87%C3%83O-DE-COMPUTADORES-II.pdf"}
-    - {codigo: CMI021, nome: Cálculo I, ch: 90, depto: DMAT, status: cursando, confirmado: false, pasta: CMI021-calculo-1,
+    - {codigo: CMI021, nome: Cálculo I, ch: 90, depto: DMAT, status: pendente,
        ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI021.pdf"}
-    - {codigo: CMI022, nome: Álgebra Linear, ch: 60, depto: DMAT, status: cursando, confirmado: false, pasta: CMI022-algebra-linear,
+    - {codigo: CMI022, nome: Álgebra Linear, ch: 60, depto: DMAT, status: pendente,
        ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI022.pdf"}
-    - {codigo: CMI023, nome: Lógica e Técnicas de Demonstração, ch: 30, depto: DMAT, status: cursando, confirmado: false, pasta: CMI023-logica-tecnicas-demonstracao,
+    - {codigo: CMI023, nome: Lógica e Técnicas de Demonstração, ch: 30, depto: DMAT, status: pendente,
        ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI023.pdf"}
   3:
     - {codigo: CE035,  nome: Cálculo de Probabilidades A, ch: 60, depto: DEST, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/outros/CE035.pdf"}
-    - {codigo: CF109,  nome: Física I, ch: 60, depto: DFIS, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/outros/CF109.pdf"}
+    - {codigo: CF109,  nome: Física I, ch: 60, depto: DFIS, status: cursando, confirmado: true, pasta: CF109-fisica-1, ementa: "https://mat.ufpr.br/documentos/ementas/outros/CF109.pdf"}
     - {codigo: CMI031, nome: Cálculo II, ch: 90, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI031.pdf"}
     - {codigo: CMI032, nome: Cálculo Numérico, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI032.pdf"}
     - {codigo: CMI033, nome: Temas Transversais, ch: 30, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI033.pdf"}
@@ -67,11 +67,19 @@ optativas_planejadas:
   - {codigo: CMI107,   nome: Tópicos em Otimização, trilha: Otimização, status: pendente}
   - {codigo: CE083,    nome: Estatística Computacional I, trilha: Dados, status: pendente}
   - {codigo: CE071,    nome: Análise de Regressão Linear, trilha: Dados, status: pendente}
-  - {codigo: CI1164,   nome: Introdução à Computação Científica, trilha: Computação, status: pendente}
+  - {codigo: CI1164,   nome: Introdução à Computação Científica, trilha: Computação, status: cursando, depto: DINF, pasta: CI1164-introducao-computacao-cientifica}
+  - {codigo: TT080,    nome: Economia de Engenharia, trilha: Gestão, status: cursando, depto: DTT, pasta: TT080-economia-engenharia}
+  - {codigo: TT081,    nome: Administração de Empresas, trilha: Gestão, status: cursando, depto: DTT, pasta: TT081-administracao-empresas}
   - {codigo: MATE7036, nome: Otimização I (PPGM), trilha: Otimização, status: pendente, obs: "pós-graduação; pré-req Análise I"}
 optativas_outras_listadas: [SA063, SA064, SA115, SA116, SC064, TP028, TP029, TP034, TP035, TP040, TP041, TP042, TP043,
   CE085, CE219, CI1001, CI1002, CMI101, CMI102, CMI105, CMI106, CMI108, CMI109, CMI110,
-  CMM201, CMM203, CMM211, CMM212, CMM213, CMM222, CMM242, MATE7002, MATE7008, MATE7009, TT080, TT081, LIB038]
+  CMM201, CMM203, CMM211, CMM212, CMM213, CMM222, CMM242, MATE7002, MATE7008, MATE7009, LIB038]
+
+# Eletivas: disciplinas fora da lista do curso. Aprovadas, contam como Atividade Formativa
+# "disciplina_eletiva" (até 60h) — registre em dados/atividades.yml depois da aprovação.
+eletivas:
+  - {codigo: CI1068, nome: Circuitos Digitais, ch: 60, depto: DINF, status: cursando, semestre: "2026-2", pasta: CI1068-circuitos-digitais}
+  - {codigo: CI1351, nome: Tópicos em Interação Humano-Computador, ch: 60, depto: DINF, status: nao_autorizada, semestre: "2026-2"}
 
 # Disciplinas optativas extensionistas (contam para as 242h de extensão — ver extensao/README.md)
 optativas_extensao:

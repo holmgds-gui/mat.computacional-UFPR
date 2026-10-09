@@ -80,7 +80,8 @@ def secao_progresso() -> list[str]:
     concluidas = sum(d["ch"] for d in disciplinas if d["status"] in ("concluida", "dispensada"))
     cursando = sum(d["ch"] for d in disciplinas if d["status"] == "cursando")
     a_confirmar = [d["codigo"] for d in disciplinas if d["status"] != "pendente" and d.get("confirmado") is False]
-    optativas = sum(60 for o in grade.get("optativas_planejadas") or [] if o["status"] == "concluida")
+    optativas = sum(o.get("ch", 60) for o in grade.get("optativas_planejadas") or [] if o["status"] == "concluida")
+    opt_cursando = sum(o.get("ch", 60) for o in grade.get("optativas_planejadas") or [] if o["status"] == "cursando")
 
     ativ = ler_yaml(DADOS / "atividades.yml")
     limites = ativ["limites_formativas"]
@@ -100,7 +101,7 @@ def secao_progresso() -> list[str]:
         "| Componente | Progresso |",
         "|---|---|",
         f"| Obrigatórias | `{barra(concluidas, ch['obrigatorias'])}` + {cursando}h cursando |",
-        f"| Optativas | `{barra(optativas, ch['optativas'])}` |",
+        f"| Optativas | `{barra(optativas, ch['optativas'])}` + {opt_cursando}h cursando |",
         f"| Atividades formativas | `{barra(formativas, ch['formativas'])}` |",
         f"| Extensão (ACE) | `{barra(ext_total, ch['extensao'])}` · ACE IV: {ext_iv:g}/{ch['extensao_ace_iv_minimo']}h |",
         "",

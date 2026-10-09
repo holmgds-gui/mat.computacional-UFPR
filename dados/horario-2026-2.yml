@@ -1,6 +1,6 @@
-# Horário das aulas — 2º período, semestre 2026/2
-# Fonte: https://matind.ufpr.br/wp-content/uploads/2026/07/Ofertas2026-2.pdf
-# Confira as salas e professores "a definir" no SIGA / UFPR Virtual e atualize aqui.
+# Horário das aulas — semestre 2026/2
+# Fonte: SIGA → Turmas Atuais (conferido em 08/10/2026). Salas: SIGA / ensalamento do Setor de Exatas
+#   https://exatas-ufpr.shinyapps.io/ensalamento/
 semestre: "2026-2"
 inicio: 2026-08-03
 fim: 2026-12-05
@@ -9,8 +9,18 @@ local_padrao: Centro Politécnico — UFPR
 sem_aula: [2026-10-12, 2026-11-02, 2026-11-20]
 
 aulas:
-  - {codigo: CMI022, nome: Álgebra Linear, professor: "Profª Paula", dias: [seg, qua], inicio: "13:30", fim: "15:30"}
-  - {codigo: CMI021, nome: Cálculo I, professor: "Prof. José Renato", dias: [ter, qui, sex], inicio: "13:30", fim: "15:30"}
-  - {codigo: CE009, nome: Introdução à Estatística, professor: "a definir", dias: [seg, qua], inicio: "15:30", fim: "17:30"}
-  - {codigo: CI185, nome: Fundamentos de Programação II, professor: "a definir", dias: [ter, qui], inicio: "15:30", fim: "17:30"}
-  - {codigo: CMI023, nome: Lógica e Técnicas de Demonstração, professor: "Prof. Roberto Ribeiro", dias: [sex], inicio: "15:30", fim: "17:30"}
+  - {codigo: TT081, nome: Administração de Empresas, turma: AMB, professor: "Adriana Maria Miguel Peixe", sala: "PG-11",
+     dias: [seg, qua], inicio: "07:30", fim: "09:30"}
+  - {codigo: CE009, nome: Introdução à Estatística, turma: ECIVIL-B, professor: "Jomar Antonio Camarinha Filho", sala: "PA — Multimídia DEST",
+     dias: [ter, qui], inicio: "07:30", fim: "09:30"}
+  - {codigo: CF109, nome: Física I, turma: EQA, professor: "Miguel Abbate", sala: "PQ-14",
+     dias: [ter, qui], inicio: "09:30", fim: "11:30"}
+  - {codigo: CI1164, nome: Introdução à Computação Científica, turma: BCC1, professor: "Armando Luiz Nicolini Delgado", sala: "Lab. 12 DINF (conferir no ensalamento)",
+     dias: [qua, sex], inicio: "13:30", fim: "15:30"}
+  - {codigo: CI1068, nome: Circuitos Digitais, turma: BCC1, professor: "Armando Luiz Nicolini Delgado (conferir)", sala: "ver ensalamento",
+     dias: [ter, qui], inicio: "15:30", fim: "17:30", obs: "eletiva"}
+  - {codigo: TT080, nome: Economia de Engenharia, turma: EQA, professor: "Adriana Maria Miguel Peixe", sala: "EQ-01",
+     dias: [seg, qua], inicio: "15:30", fim: "17:30"}
+
+# Pedido não aceito: CI1351 Tópicos em Interação Humano-Computador (BCC1, ter/qui 13:30–15:30),
+# situação "Eletiva não autorizada (Departamento)".
