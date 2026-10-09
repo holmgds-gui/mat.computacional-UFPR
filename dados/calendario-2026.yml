@@ -1,0 +1,65 @@
+# Calendário acadêmico 2026 — eventos de dia inteiro
+# Fonte principal: PROGRAP, Calendário Geral Estudantes 2026 (Res. 22/25-CEPE)
+#   https://prograp.ufpr.br/wp-content/uploads/2025/12/Calendario-Geral-Estudantes-2026-2.pdf
+#
+# Campos: titulo, inicio, fim (inclusivo; omitir = 1 dia), tipo, alerta (dias de antecedência
+# para abrir uma Issue de lembrete; omitir = sem Issue), obs
+# tipos: letivo | matricula | prazo | exame | evento | feriado | ic
+
+fonte: https://prograp.ufpr.br/calendario-academico/
+
+eventos:
+  # ---------------- 1º semestre ----------------
+  - {titulo: "Destrancamento de curso (1º sem)", inicio: 2026-01-09, fim: 2026-02-27, tipo: prazo}
+  - {titulo: "Pesquisa de avaliação de cursos e disciplinas (2025-2)", inicio: 2026-01-14, fim: 2026-03-12, tipo: prazo}
+  - {titulo: "Matrícula 1º semestre pelo SIGA", inicio: 2026-01-29, fim: 2026-02-02, tipo: matricula, alerta: 7}
+  - {titulo: "Trancamento de curso para quem não fez matrícula (1º sem)", inicio: 2026-02-03, fim: 2026-03-06, tipo: prazo}
+  - {titulo: "Ajustes de matrícula pelo SIGA (1º sem)", inicio: 2026-02-05, fim: 2026-02-06, tipo: matricula, alerta: 3}
+  - {titulo: "Dispensa de pré/correquisito (1º sem)", inicio: 2026-02-10, fim: 2026-02-20, tipo: prazo}
+  - {titulo: "Ajustes de matrícula nas coordenações (1º sem)", inicio: 2026-02-10, fim: 2026-03-04, tipo: matricula}
+  - {titulo: "Primeiro dia letivo do 1º semestre", inicio: 2026-02-23, tipo: letivo}
+  - {titulo: "Confirmação de matrícula / ocupação da vaga (1º sem)", inicio: 2026-02-23, fim: 2026-02-25, tipo: matricula}
+  - {titulo: "Recepção dos ingressantes (1º sem)", inicio: 2026-02-23, fim: 2026-02-27, tipo: evento}
+  - {titulo: "Exames de adiantamento (1º sem)", inicio: 2026-02-23, fim: 2026-03-04, tipo: prazo}
+  - {titulo: "Equivalência de disciplinas (1º sem)", inicio: 2026-02-23, fim: 2026-03-13, tipo: prazo}
+  - {titulo: "Cancelamento de disciplinas semestrais e trancamento (1º sem)", inicio: 2026-03-09, fim: 2026-04-24, tipo: prazo, alerta: 7}
+  - {titulo: "Cancelamento de disciplinas anuais / trancamento (anuais)", inicio: 2026-03-09, fim: 2026-08-07, tipo: prazo}
+  - {titulo: "Matrícula em disciplinas isoladas ou eletivas (1º sem)", inicio: 2026-03-09, fim: 2026-03-10, tipo: matricula}
+  - {titulo: "Entrega de certificados de atividades formativas (1º sem)", inicio: 2026-04-06, fim: 2026-05-22, tipo: prazo,
+     obs: "Só entrega quem já completou as 200h (Regulamento de Formativas, Art. 5º §1)"}
+  - {titulo: "Exame de aproveitamento (1º sem)", inicio: 2026-05-04, fim: 2026-05-15, tipo: prazo}
+  - {titulo: "Último dia letivo do 1º semestre", inicio: 2026-06-27, tipo: letivo}
+  - {titulo: "Exames finais do 1º semestre", inicio: 2026-06-29, fim: 2026-07-04, tipo: exame}
+  - {titulo: "Período especial do 1º semestre", inicio: 2026-06-29, fim: 2026-07-31, tipo: letivo}
+  - {titulo: "Pesquisa de avaliação de disciplinas (2026-1)", inicio: 2026-07-06, fim: 2026-08-13, tipo: prazo}
+
+  # ---------------- 2º semestre ----------------
+  - {titulo: "Matrícula 2º semestre pelo SIGA", inicio: 2026-07-13, fim: 2026-07-15, tipo: matricula, alerta: 7}
+  - {titulo: "Trancamento para quem não fez matrícula (2º sem)", inicio: 2026-07-16, fim: 2026-08-14, tipo: prazo}
+  - {titulo: "Ajustes de matrícula pelo SIGA (2º sem)", inicio: 2026-07-20, fim: 2026-07-21, tipo: matricula, alerta: 3}
+  - {titulo: "Dispensa de pré/correquisito (2º sem)", inicio: 2026-07-20, fim: 2026-07-31, tipo: prazo}
+  - {titulo: "Ajustes de matrícula nas coordenações (2º sem)", inicio: 2026-07-23, fim: 2026-08-12, tipo: matricula}
+  - {titulo: "Primeiro dia letivo do 2º semestre", inicio: 2026-08-03, tipo: letivo}
+  - {titulo: "Confirmação de matrícula / ocupação da vaga (2º sem)", inicio: 2026-08-03, fim: 2026-08-05, tipo: matricula}
+  - {titulo: "Recepção dos ingressantes (2º sem)", inicio: 2026-08-03, fim: 2026-08-07, tipo: evento}
+  - {titulo: "Exames de adiantamento (2º sem)", inicio: 2026-08-03, fim: 2026-08-14, tipo: prazo}
+  - {titulo: "Equivalência de disciplinas (2º sem)", inicio: 2026-08-03, fim: 2026-08-19, tipo: prazo}
+  - {titulo: "Cancelamento de disciplinas semestrais e trancamento (2º sem)", inicio: 2026-08-17, fim: 2026-10-02, tipo: prazo, alerta: 7}
+  - {titulo: "Matrícula em disciplinas isoladas ou eletivas (2º sem)", inicio: 2026-08-17, fim: 2026-08-18, tipo: matricula}
+  - {titulo: "Entrega de certificados de atividades formativas (2º sem)", inicio: 2026-08-24, fim: 2026-10-23, tipo: prazo,
+     obs: "Só entrega quem já completou as 200h (Regulamento de Formativas, Art. 5º §1)"}
+  - {titulo: "Exame de aproveitamento (2º sem)", inicio: 2026-10-13, fim: 2026-10-23, tipo: prazo}
+  - {titulo: "Último dia letivo do 2º semestre", inicio: 2026-12-05, tipo: letivo, alerta: 7}
+  - {titulo: "Exames finais do 2º semestre", inicio: 2026-12-07, fim: 2026-12-11, tipo: exame, alerta: 7}
+  - {titulo: "Período especial do 2º semestre", inicio: 2026-12-07, fim: 2027-02-12, tipo: letivo}
+
+  # ---------------- Eventos e pesquisa ----------------
+  - {titulo: "17ª SIEPE (inclui EVINCI/EINTI) — assistir apresentações de IC", inicio: 2026-10-19, fim: 2026-10-23, tipo: evento, alerta: 5,
+     obs: "Pode valer horas de 'Participação em eventos' (até 40h) se houver certificado. Bom lugar para conhecer orientadores de IC. https://siepe.ufpr.br/"}
+  - {titulo: "Procurar orientador(a) de IC para o Edital 2027", inicio: 2027-01-15, tipo: ic, alerta: 0,
+     obs: "No Edital 2026 o docente inscreveu o projeto de 30/03 a 12/04 e cadastrou estudantes em junho, pelo SIGA. Datas de 2027 ainda não publicadas."}
+
+  # ---------------- Feriados (aulas suspensas — conferir recessos da UFPR) ----------------
+  - {titulo: "Feriado — Nossa Senhora Aparecida", inicio: 2026-10-12, tipo: feriado}
+  - {titulo: "Feriado — Finados", inicio: 2026-11-02, tipo: feriado}
+  - {titulo: "Feriado — Dia da Consciência Negra", inicio: 2026-11-20, tipo: feriado}

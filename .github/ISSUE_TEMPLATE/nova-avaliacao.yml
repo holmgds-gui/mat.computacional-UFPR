@@ -1,0 +1,47 @@
+name: "🧪 Nova prova / trabalho"
+description: Cadastra uma avaliação (entra no calendário e gera lembrete). Funciona pelo celular.
+title: "Nova avaliação"
+labels: ["nova-avaliacao"]
+body:
+  - type: input
+    id: codigo
+    attributes:
+      label: Disciplina (código)
+      placeholder: CMI021
+    validations:
+      required: true
+  - type: input
+    id: titulo
+    attributes:
+      label: Título
+      placeholder: Prova 2
+    validations:
+      required: true
+  - type: input
+    id: data
+    attributes:
+      label: Data (AAAA-MM-DD)
+      placeholder: 2026-11-06
+    validations:
+      required: true
+  - type: input
+    id: hora
+    attributes:
+      label: Hora de início (HH:MM, opcional)
+      placeholder: "13:30"
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo
+      options: [prova, trabalho, lista, seminario]
+    validations:
+      required: true
+  - type: input
+    id: alerta
+    attributes:
+      label: Avisar quantos dias antes? (opcional, padrão 7)
+      placeholder: "7"
+  - type: textarea
+    id: obs
+    attributes:
+      label: Observações (conteúdo, sala, material permitido)

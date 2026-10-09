@@ -1,0 +1,16 @@
+# Horário das aulas — 2º período, semestre 2026/2
+# Fonte: https://matind.ufpr.br/wp-content/uploads/2026/07/Ofertas2026-2.pdf
+# Confira as salas e professores "a definir" no SIGA / UFPR Virtual e atualize aqui.
+semestre: "2026-2"
+inicio: 2026-08-03
+fim: 2026-12-05
+local_padrao: Centro Politécnico — UFPR
+# Dias sem aula (feriados). Recessos próprios da UFPR: confirmar e acrescentar.
+sem_aula: [2026-10-12, 2026-11-02, 2026-11-20]
+
+aulas:
+  - {codigo: CMI022, nome: Álgebra Linear, professor: "Profª Paula", dias: [seg, qua], inicio: "13:30", fim: "15:30"}
+  - {codigo: CMI021, nome: Cálculo I, professor: "Prof. José Renato", dias: [ter, qui, sex], inicio: "13:30", fim: "15:30"}
+  - {codigo: CE009, nome: Introdução à Estatística, professor: "a definir", dias: [seg, qua], inicio: "15:30", fim: "17:30"}
+  - {codigo: CI185, nome: Fundamentos de Programação II, professor: "a definir", dias: [ter, qui], inicio: "15:30", fim: "17:30"}
+  - {codigo: CMI023, nome: Lógica e Técnicas de Demonstração, professor: "Prof. Roberto Ribeiro", dias: [sex], inicio: "15:30", fim: "17:30"}

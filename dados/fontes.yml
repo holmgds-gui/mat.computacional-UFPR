@@ -1,0 +1,117 @@
+# Fontes que o "radar" verifica todos os dias (scripts/radar.py).
+# Quando aparece algo novo e relevante, ele abre uma Issue no GitHub (você recebe e-mail).
+#
+# tipo:
+#   wp_posts  – notícias de um site WordPress da UFPR (API pública /wp-json/wp/v2/posts)
+#   wp_pages  – páginas de um site WordPress; avisa quando uma página é criada ou alterada
+#   pagina    – qualquer página: avisa quando o conteúdo muda (hash do texto)
+# filtro: "todos" ou lista de palavras-chave (sem acento/maiúsculas, o script normaliza)
+# excluir: palavras que descartam o item mesmo que ele case com o filtro
+
+excluir_pos: &excluir_pos [mestrado, doutorado, residencia, concurso docente, tecnico-administrativos, servidores]
+
+palavras_interesse: &interesse
+  - matematica industrial
+  - matematica
+  - iniciacao cientifica
+  - pibic
+  - pibiti
+  - evinci
+  - siepe
+  - monitoria
+  - extensao
+  - bolsa
+  - edital
+  - estagio
+  - otimizacao
+  - ciencia de dados
+  - inteligencia artificial
+  - aprendizado de maquina
+  - machine learning
+  - programacao
+  - hackathon
+  - maratona
+  - olimpiada
+  - minicurso
+  - palestra
+  - semana academica
+  - calendario academico
+  - matricula
+  - intercambio
+  - mobilidade
+  - auxilio
+  - prae
+  - exatas
+
+fontes:
+  - id: matind-paginas
+    nome: Coordenação de Matemática Industrial (páginas)
+    tipo: wp_pages
+    url: https://matind.ufpr.br
+    filtro: todos
+    rotulo: curso
+
+  - id: cmat
+    nome: Coordenação de Matemática (notícias)
+    tipo: wp_posts
+    url: https://cmat.ufpr.br
+    filtro: todos
+    rotulo: curso
+
+  - id: dmat-aulas
+    nome: DMAT — horários das turmas
+    tipo: pagina
+    url: https://mat.ufpr.br/departamento/Aulas/Aulas_2026-2.html
+    rotulo: curso
+
+  - id: dmat-eventos
+    nome: DMAT — eventos e pesquisa
+    tipo: pagina
+    # A página Eventos.html é montada por JavaScript a partir deste arquivo de dados
+    url: https://mat.ufpr.br/departamento/data/Eventos_data.js
+    link: https://mat.ufpr.br/departamento/Eventos.html
+    rotulo: evento
+
+  - id: exatas
+    nome: Setor de Ciências Exatas
+    tipo: wp_posts
+    url: https://exatas.ufpr.br
+    filtro: todos
+    rotulo: setor
+
+  - id: prograp
+    nome: PROGRAP (graduação, monitoria, calendário)
+    tipo: wp_posts
+    url: https://prograp.ufpr.br
+    filtro: todos
+    rotulo: graduacao
+
+  - id: prograp-calendario
+    nome: PROGRAP — página do calendário acadêmico
+    tipo: pagina
+    url: https://prograp.ufpr.br/calendario-academico/
+    rotulo: prazo
+
+  - id: propg
+    nome: PROPG (iniciação científica, pós-graduação)
+    tipo: wp_posts
+    url: https://ufpr.br/propg
+    # PROPG publica muito sobre pós-graduação; filtra o que interessa à graduação
+    filtro: [iniciacao cientifica, iniciacao tecnologica, pibic, pibiti, ic, ict, evinci, einti, siepe,
+             graduandos, matematica, otimizacao, inteligencia artificial]
+    excluir: *excluir_pos
+    rotulo: ic
+
+  - id: propg-ict-editais
+    nome: PROPG — editais de IC
+    tipo: pagina
+    url: https://ufpr.br/propg/ict/editais/
+    rotulo: ic
+
+  - id: ufpr-portal
+    nome: Portal UFPR (notícias gerais, extensão, SIEPE)
+    tipo: wp_posts
+    url: https://ufpr.br
+    filtro: *interesse
+    excluir: *excluir_pos
+    rotulo: ufpr

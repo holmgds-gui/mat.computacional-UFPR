@@ -1,0 +1,64 @@
+name: Formulários → dados
+
+on:
+  issues:
+    types: [opened, reopened]
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: atualizar
+  cancel-in-progress: false
+
+jobs:
+  registrar:
+    # Só aceita formulários abertos pelo dono do repositório (o repo é público)
+    if: >-
+      github.event.issue.user.login == github.repository_owner &&
+      (contains(github.event.issue.labels.*.name, 'nova-avaliacao') ||
+       contains(github.event.issue.labels.*.name, 'nova-atividade'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+
+      - name: Converter Issue em dados
+        id: conv
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          FORMULARIO: ${{ contains(github.event.issue.labels.*.name, 'nova-avaliacao') && 'avaliacao' || 'atividade' }}
+        run: |
+          set +e
+          python scripts/issue_para_dados.py > resposta.txt
+          echo "ok=$?" >> "$GITHUB_OUTPUT"
+          cat resposta.txt
+
+      - name: Salvar
+        if: steps.conv.outputs.ok == '0'
+        env:
+          NUMERO: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados
+          git commit -m "Registro via formulário (#${NUMERO})"
+          git pull --rebase
+          git push
+
+      - name: Responder na Issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUMERO: ${{ github.event.issue.number }}
+          OK: ${{ steps.conv.outputs.ok }}
+        run: |
+          gh issue comment "$NUMERO" --repo "$GITHUB_REPOSITORY" --body-file resposta.txt
+          if [ "$OK" = "0" ]; then
+            gh issue close "$NUMERO" --repo "$GITHUB_REPOSITORY"
+            gh workflow run atualizar.yml --repo "$GITHUB_REPOSITORY"
+          fi

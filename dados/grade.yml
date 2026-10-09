@@ -1,0 +1,84 @@
+# Grade curricular — Matemática Industrial, currículo 2025
+# Fontes: https://matind.ufpr.br/curriculo/ (turmas 2026/2) e PPC 2025 (Anexo I)
+#
+# status: concluida | cursando | pendente | dispensada
+# confirmado: false  -> preenchido automaticamente, falta você conferir no SIGA
+# pasta: nome da pasta em disciplinas/ (criada quando você começa a disciplina)
+#
+# Notas e conceitos NÃO ficam aqui (o repositório é público): use privado/historico.yml
+
+semestres:
+  1:
+    - {codigo: CI182,  nome: Fundamentos de Programação de Computadores, ch: 60, depto: DINF, status: concluida, confirmado: false, pasta: CI182-fundamentos-programacao,
+       ementa: "https://web.inf.ufpr.br/dinf/wp-content/uploads/sites/2/2020/05/CI182-FUNDAMENTOS-DE-PROGRAMA%C3%87%C3%83O-DE-COMPUTADORES.pdf"}
+    - {codigo: CMI011, nome: Funções, ch: 90, depto: DMAT, status: concluida, confirmado: false, pasta: CMI011-funcoes,
+       ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI011.pdf"}
+    - {codigo: CMI012, nome: Geometria Analítica, ch: 60, depto: DMAT, status: concluida, confirmado: false, pasta: CMI012-geometria-analitica,
+       ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI012.pdf"}
+    - {codigo: CMI013, nome: Matrizes e Sistemas de Equações Lineares, ch: 60, depto: DMAT, status: concluida, confirmado: false, pasta: CMI013-matrizes-sistemas-lineares,
+       ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI013.pdf"}
+    - {codigo: CMI014, nome: Tendências em Matemática Industrial, ch: 30, depto: DMAT, status: concluida, confirmado: false, pasta: CMI014-tendencias-matematica-industrial,
+       ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI014.pdf"}
+  2:
+    - {codigo: CE009,  nome: Introdução à Estatística, ch: 60, depto: DEST, status: cursando, confirmado: false, pasta: CE009-introducao-estatistica,
+       ementa: "https://matind.ufpr.br/wp-content/uploads/2021/10/CE009-Introducao-a-Estatistica.pdf"}
+    - {codigo: CI185,  nome: Fundamentos de Programação de Computadores II, ch: 60, depto: DINF, status: cursando, confirmado: false, pasta: CI185-fundamentos-programacao-2, prereq: [CI182],
+       ementa: "https://web.inf.ufpr.br/dinf/wp-content/uploads/sites/2/2020/05/CI185-FUNDAMENTOS-DE-PROGRAMA%C3%87%C3%83O-DE-COMPUTADORES-II.pdf"}
+    - {codigo: CMI021, nome: Cálculo I, ch: 90, depto: DMAT, status: cursando, confirmado: false, pasta: CMI021-calculo-1,
+       ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI021.pdf"}
+    - {codigo: CMI022, nome: Álgebra Linear, ch: 60, depto: DMAT, status: cursando, confirmado: false, pasta: CMI022-algebra-linear,
+       ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI022.pdf"}
+    - {codigo: CMI023, nome: Lógica e Técnicas de Demonstração, ch: 30, depto: DMAT, status: cursando, confirmado: false, pasta: CMI023-logica-tecnicas-demonstracao,
+       ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI023.pdf"}
+  3:
+    - {codigo: CE035,  nome: Cálculo de Probabilidades A, ch: 60, depto: DEST, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/outros/CE035.pdf"}
+    - {codigo: CF109,  nome: Física I, ch: 60, depto: DFIS, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/outros/CF109.pdf"}
+    - {codigo: CMI031, nome: Cálculo II, ch: 90, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI031.pdf"}
+    - {codigo: CMI032, nome: Cálculo Numérico, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI032.pdf"}
+    - {codigo: CMI033, nome: Temas Transversais, ch: 30, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI033.pdf"}
+  4:
+    - {codigo: CF111,  nome: Física III, ch: 60, depto: DFIS, status: pendente, prereq: [CF109], ementa: "https://fisica.ufpr.br/departamento/ementas/CF061.pdf"}
+    - {codigo: CMI041, nome: Cálculo III, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI041.pdf"}
+    - {codigo: CMI042, nome: Análise Numérica I, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI042.pdf"}
+    - {codigo: CMI043, nome: Programação Não Linear, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI043.pdf"}
+    - {codigo: TP065,  nome: Tecnologia da Decisão I, ch: 60, depto: DEP, status: pendente, ementa: "https://engprod.ufpr.br/wp-content/uploads/2023/02/tecnologia-de-decisao-i.pdf"}
+  5:
+    - {codigo: CMI051, nome: Variáveis Complexas e Aplicações, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI051.pdf"}
+    - {codigo: CMI052, nome: Análise Numérica II, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI052.pdf"}
+    - {codigo: TP066,  nome: Tecnologia da Decisão II, ch: 60, depto: DEP, status: pendente, ementa: "https://engprod.ufpr.br/wp-content/uploads/2023/02/tecnologia-da-decisao-ii.pdf"}
+  6:
+    - {codigo: CMI061, nome: Equações Diferenciais Parciais e Aplicações, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI061.pdf"}
+    - {codigo: CMI062, nome: Análise I, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI062.pdf"}
+    # O site do curso lista CMI064; o Anexo I do PPC 2025 lista CMI063 – Programação Linear. Confirmar com a coordenação.
+    - {codigo: CMI064, nome: Modelagem Matemática em Ciências da Natureza, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI064.pdf"}
+  7:
+    - {codigo: CMI071, nome: Métodos de Matemática Aplicada, ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI071.pdf"}
+    - {codigo: CMI072, nome: Estágio Supervisionado I, ch: 120, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI072.pdf"}
+  8:
+    - {codigo: CMI081, nome: Estágio Supervisionado II, ch: 120, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI081.pdf"}
+    - {codigo: CMI082, nome: Projeto de Matemática Industrial (TCC), ch: 60, depto: DMAT, status: pendente, ementa: "https://mat.ufpr.br/documentos/ementas/matematica/CMI082.pdf"}
+
+# Optativas: mínimo 300h (5 disciplinas de 60h), recomendadas do 5º ao 8º semestre.
+# Lista oficial: https://matind.ufpr.br/disciplinas-optativas/
+# Trilhas sugeridas pelos seus interesses (otimização, ciência de dados, IA):
+optativas_planejadas:
+  - {codigo: CMI104,   nome: Aprendizagem de Máquina, trilha: IA, status: pendente}
+  - {codigo: CMI103,   nome: Métodos Computacionais de Otimização, trilha: Otimização, status: pendente}
+  - {codigo: CMI107,   nome: Tópicos em Otimização, trilha: Otimização, status: pendente}
+  - {codigo: CE083,    nome: Estatística Computacional I, trilha: Dados, status: pendente}
+  - {codigo: CE071,    nome: Análise de Regressão Linear, trilha: Dados, status: pendente}
+  - {codigo: CI1164,   nome: Introdução à Computação Científica, trilha: Computação, status: pendente}
+  - {codigo: MATE7036, nome: Otimização I (PPGM), trilha: Otimização, status: pendente, obs: "pós-graduação; pré-req Análise I"}
+optativas_outras_listadas: [SA063, SA064, SA115, SA116, SC064, TP028, TP029, TP034, TP035, TP040, TP041, TP042, TP043,
+  CE085, CE219, CI1001, CI1002, CMI101, CMI102, CMI105, CMI106, CMI108, CMI109, CMI110,
+  CMM201, CMM203, CMM211, CMM212, CMM213, CMM222, CMM242, MATE7002, MATE7008, MATE7009, TT080, TT081, LIB038]
+
+# Disciplinas optativas extensionistas (contam para as 242h de extensão — ver extensao/README.md)
+optativas_extensao:
+  - {codigo: CM001E, nome: Introdução à Extensão Universitária, ch: 30, ace: I}
+  - {codigo: CM011E, nome: Monografia Extensionista 1, ch: 60, ace: II}
+  - {codigo: CM021E, nome: Monografia Extensionista 2, ch: 60, ace: II}
+  # Modalidade ACE das três abaixo não está explícita no PPC — confirmar com a CAE
+  - {codigo: CM101E, nome: Atividades de Extensão Universitária 1, ch: 90}
+  - {codigo: CM201E, nome: Atividades de Extensão Universitária 2, ch: 90}
+  - {codigo: CM301E, nome: Atividades de Extensão Universitária 3, ch: 90}

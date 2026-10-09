@@ -1,0 +1,39 @@
+# Atividades Formativas Complementares (200h) e Extensão (ACE, 242h)
+# O painel do README soma as horas aplicando os limites de cada categoria.
+#
+# REGRA IMPORTANTE (Formativas Art. 6º e ACE Art. 9º): a mesma atividade NÃO pode contar
+# como formativa E como extensão. Escolha uma em `conta_como`.
+#
+# Cada atividade:
+#   - titulo: "SIEPE 2026 — ouvinte"
+#     data: 2026-10-19
+#     horas: 12
+#     conta_como: formativa | extensao
+#     categoria: (formativa) uma das chaves de `limites_formativas`
+#                (extensao)  ACE-I | ACE-II | ACE-III | ACE-IV | ACE-V
+#     certificado: false        # true quando o comprovante estiver guardado (em privado/certificados/)
+#     obs: ""
+
+# Regulamento de Formativas (Colegiado, 19/11/2025): horas máximas por categoria
+limites_formativas:
+  organizacao_eventos: 90        # Feira de Cursos e Profissões, visitas a escolas, eventos do curso
+  representacao_academica: 40    # Centro Acadêmico, Empresa Júnior, colegiados, comissões
+  apresentacao_trabalho: 20      # apresentar trabalho em congresso/seminário/evento
+  extensao: 40                   # cursos, minicursos, eventos e projetos de extensão da UFPR
+  cursos_livres: 40              # cursos/minicursos correlatos ou idiomas (inclui online)
+  disciplina_eletiva: 60         # disciplina de outro curso/instituição
+  estagio_nao_obrigatorio: 60    # aprovado pela COE
+  iniciacao_cientifica: 60       # projeto registrado na PROPG + apresentação no EVINCI
+  monitoria: 60
+  participacao_eventos: 40       # congressos, seminários, ciclos de palestras
+  programas_institucionais: 60   # PET, PVA e outros projetos institucionais
+  voluntariado: 40
+
+# Regulamento de ACE (PPC 2025): 242h no total, sendo pelo menos 90h em ACE IV
+#   ACE I   – disciplina introdutória de extensão (CM001E)
+#   ACE II  – disciplinas com carga de extensão (CM011E, CM021E)
+#   ACE III – participação em programas/projetos de extensão da UFPR
+#   ACE IV  – equipe organizadora ou ministrante de cursos/eventos, ou prestação de serviço, ligados a projetos de extensão
+#   ACE V   – projetos de extensão em outras instituições parceiras
+
+atividades: []

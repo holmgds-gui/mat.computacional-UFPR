@@ -1,0 +1,34 @@
+% Modelo para resolver listas de exercícios.
+% Compile com: latexmk -pdf lista.tex  (ou cole no Overleaf)
+\documentclass[11pt,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\newtheorem*{teo}{Teorema}
+\theoremstyle{definition}
+\newtheorem{exercicio}{Exercício}
+\newenvironment{solucao}{\begin{proof}[Solução]}{\end{proof}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+
+\title{CMI021 --- Cálculo I\\\large Lista 1}
+\author{Matemática Industrial --- UFPR}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{exercicio}
+Calcule $\displaystyle\lim_{x\to 0}\frac{\sin x}{x}$.
+\end{exercicio}
+\begin{solucao}
+Pelo confronto, $\cos x \le \frac{\sin x}{x} \le 1$ para $0<|x|<\pi/2$; logo o limite é $1$.
+\end{solucao}
+
+\end{document}

@@ -1,0 +1,68 @@
+name: "🏅 Nova atividade formativa / extensão"
+description: Registra horas de atividade formativa ou de extensão (ACE). O painel soma automaticamente.
+title: "Nova atividade"
+labels: ["nova-atividade"]
+body:
+  - type: input
+    id: titulo
+    attributes:
+      label: Atividade
+      placeholder: SIEPE 2026 — ouvinte
+    validations:
+      required: true
+  - type: input
+    id: data
+    attributes:
+      label: Data (AAAA-MM-DD)
+      placeholder: 2026-10-19
+    validations:
+      required: true
+  - type: input
+    id: horas
+    attributes:
+      label: Horas (do certificado)
+      placeholder: "12"
+    validations:
+      required: true
+  - type: dropdown
+    id: conta_como
+    attributes:
+      label: Conta como
+      options: [formativa, extensao]
+    validations:
+      required: true
+  - type: dropdown
+    id: categoria
+    attributes:
+      label: Categoria
+      description: Para formativa use as categorias minúsculas; para extensão, ACE-I a ACE-V.
+      options:
+        - participacao_eventos
+        - apresentacao_trabalho
+        - organizacao_eventos
+        - cursos_livres
+        - extensao
+        - iniciacao_cientifica
+        - monitoria
+        - programas_institucionais
+        - representacao_academica
+        - disciplina_eletiva
+        - estagio_nao_obrigatorio
+        - voluntariado
+        - ACE-I
+        - ACE-II
+        - ACE-III
+        - ACE-IV
+        - ACE-V
+    validations:
+      required: true
+  - type: checkboxes
+    id: certificado
+    attributes:
+      label: Comprovante
+      options:
+        - label: Já tenho o certificado guardado (em privado/certificados/)
+  - type: textarea
+    id: obs
+    attributes:
+      label: Observações

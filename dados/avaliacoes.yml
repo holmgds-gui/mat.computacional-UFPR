@@ -1,0 +1,11 @@
+# Provas, trabalhos e listas — você preenche conforme os professores divulgam.
+# Cada item vira evento no calendário e gera uma Issue de lembrete `alerta` dias antes.
+#
+# Campos: codigo (disciplina), titulo, data (AAAA-MM-DD), hora (opcional "HH:MM"),
+#         duracao_h (opcional, padrão 2), tipo (prova | trabalho | lista | seminario), alerta (padrão 7), obs
+#
+# Exemplo (descomente e ajuste):
+# - {codigo: CMI021, titulo: "Prova 2", data: 2026-11-06, hora: "13:30", tipo: prova}
+# - {codigo: CI185, titulo: "Trabalho prático 1", data: 2026-10-30, tipo: trabalho, alerta: 5}
+
+avaliacoes: []

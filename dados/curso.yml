@@ -1,0 +1,43 @@
+# Dados do curso — fonte: PPC 2025 e https://matind.ufpr.br/curriculo/
+curso: Matemática Industrial
+grau: Bacharelado
+codigo_curso: 40001016073G0
+curriculo: "2025"
+setor: Setor de Ciências Exatas
+campus: Centro Politécnico (Jardim das Américas), Curitiba
+turno: Vespertino (13h30–17h30)
+ingresso: "2026-1"
+semestre_atual: "2026-2"
+periodo_atual: 2
+
+integralizacao:
+  minimo_semestres: 8
+  maximo_semestres: 12
+
+# Carga horária exigida (horas)
+carga_horaria:
+  total: 2420
+  obrigatorias: 1920
+  optativas: 300          # mínimo de 5 optativas de 60h
+  formativas: 200         # Atividades Formativas Complementares
+  extensao: 242           # Ações Curriculares de Extensão (ACE) — 10% do curso
+  extensao_ace_iv_minimo: 90
+
+contatos:
+  coordenacao_email: cmind@ufpr.br
+  coordenacao_telefone: "+55 41 3361-3353"
+  site: https://matind.ufpr.br/
+  instagram: https://www.instagram.com/matind.ufpr
+
+documentos:
+  ppc_2025: https://matind.ufpr.br/wp-content/uploads/2026/03/PPC-2025-Ativo.pdf
+  regulamento_formativas: https://matind.ufpr.br/wp-content/uploads/2026/03/Formativas.pdf
+  planilha_formativas: https://matind.ufpr.br/wp-content/uploads/2026/03/Planilha-formativas-2026-Nome-GRRXX.xls
+  declaracao_extensao: https://matind.ufpr.br/wp-content/uploads/2026/03/Declaracao.pdf
+  regulamento_estagio: https://matind.ufpr.br/wp-content/uploads/2025/12/Regulamento-de-Estagio-CMIND.pdf
+  modelo_relatorio_estagio: https://matind.ufpr.br/wp-content/uploads/2021/11/Modelo_Relatorio_Estagio_Sup_MatindB.pdf
+  orientacao_tcc: https://matind.ufpr.br/wp-content/uploads/2021/10/orientacaoTCC.pdf
+  ata_tcc: https://matind.ufpr.br/wp-content/uploads/2021/10/ATA_TCC.pdf
+  ofertas_2026_2: https://matind.ufpr.br/wp-content/uploads/2026/07/Ofertas2026-2.pdf
+  optativas: https://matind.ufpr.br/disciplinas-optativas/
+  calendario_academico: https://prograp.ufpr.br/calendario-academico/
