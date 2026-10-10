@@ -7,17 +7,16 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 09/10/2026 (sexta) · semestre 2026-2 · 2º período
+**Hoje:** 10/10/2026 (sábado) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 13:30 CI1164 Introdução à Computação Científica
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 24/08–23/10 | Entrega de certificados de atividades formativas (2º sem) | **em andamento** — termina em 14 dia(s) (23/10) |
-| 13/10–23/10 | Exame de aproveitamento (2º sem) | em 4 dias |
-| 19/10–23/10 | 17ª SIEPE (inclui EVINCI/EINTI) — assistir apresentações de IC | em 10 dias |
+| 24/08–23/10 | Entrega de certificados de atividades formativas (2º sem) | **em andamento** — termina em 13 dia(s) (23/10) |
+| 13/10–23/10 | Exame de aproveitamento (2º sem) | em 3 dias |
+| 19/10–23/10 | 17ª SIEPE (inclui EVINCI/EINTI) — assistir apresentações de IC | em 9 dias |
 
 ### 📊 Integralização
 
@@ -34,7 +33,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 - 09/10 · [Curso de Extensão da UFPR apresenta propostas de habitação social para a Vila Joanita](https://ufpr.br/ufpr-apresenta-propostas-de-habitacao-social-para-a-vila-joanita/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 09/10/2026.</sub>
+<sub>Painel atualizado automaticamente em 10/10/2026.</sub>
 <!-- painel:fim -->
 
 ---
