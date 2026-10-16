@@ -7,17 +7,17 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 15/10/2026 (quinta) · semestre 2026-2 · 2º período
+**Hoje:** 16/10/2026 (sexta) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 07:30 CE009 Introdução à Estatística · 09:30 CF109 Física I · 15:30 CI1068 Circuitos Digitais
+**Aulas de hoje:** 13:30 CI1164 Introdução à Computação Científica
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 24/08–23/10 | Entrega de certificados de atividades formativas (2º sem) | **em andamento** — termina em 8 dia(s) (23/10) |
-| 13/10–23/10 | Exame de aproveitamento (2º sem) | **em andamento** — termina em 8 dia(s) (23/10) |
-| 19/10–23/10 | 17ª SIEPE (inclui EVINCI/EINTI) — assistir apresentações de IC | em 4 dias |
+| 24/08–23/10 | Entrega de certificados de atividades formativas (2º sem) | **em andamento** — termina em 7 dia(s) (23/10) |
+| 13/10–23/10 | Exame de aproveitamento (2º sem) | **em andamento** — termina em 7 dia(s) (23/10) |
+| 19/10–23/10 | 17ª SIEPE (inclui EVINCI/EINTI) — assistir apresentações de IC | em 3 dias |
 
 ### 📊 Integralização
 
@@ -32,10 +32,11 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 ### 📡 Últimas do radar
 
+- 16/10 · [Página atualizada: Nossos Alunos](https://matind.ufpr.br/nossos-alunos/) — _Coordenação de Matemática Industrial (páginas)_
 - 13/10 · [Página atualizada: Nossos Alunos](https://matind.ufpr.br/nossos-alunos/) — _Coordenação de Matemática Industrial (páginas)_
 - 09/10 · [Curso de Extensão da UFPR apresenta propostas de habitação social para a Vila Joanita](https://ufpr.br/ufpr-apresenta-propostas-de-habitacao-social-para-a-vila-joanita/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 15/10/2026.</sub>
+<sub>Painel atualizado automaticamente em 16/10/2026.</sub>
 <!-- painel:fim -->
 
 ---
