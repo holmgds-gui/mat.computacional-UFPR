@@ -9,6 +9,7 @@ on:
     paths:
       - "dados/**"
       - "scripts/**"
+      - "app/**"
       - ".github/workflows/atualizar.yml"
 
 permissions:

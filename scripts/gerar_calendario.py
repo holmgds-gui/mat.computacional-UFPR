@@ -1,10 +1,11 @@
-"""Gera os calendários .ics (e uma página índice) em site/ a partir de dados/.
+"""Gera os calendários .ics e publica a interface do SIGA+ UFPR em site/ a partir de dados/.
 
 Arquivos gerados:
   site/calendario.ics  – tudo (prazos + aulas + avaliações)
   site/prazos.ics      – calendário acadêmico, eventos e avaliações
   site/aulas.ics       – grade horária semanal
-  site/index.html      – página com os links de assinatura
+  site/estado.json     – estado público consolidado (sem dados de privado/)
+  site/index.html, site/style.css, site/app.js – interface web SIGA+ UFPR
 
 Uso: python scripts/gerar_calendario.py
 """
@@ -13,9 +14,12 @@ from __future__ import annotations
 
 import datetime as dt
 import hashlib
-import html
+import json
+import shutil
+import sys
+from pathlib import Path
 
-from comum import DADOS, FUSO, SITE, avaliacoes, como_data, eventos_do_calendario, hoje, ler_yaml
+from comum import DADOS, FUSO, RAIZ, SITE, avaliacoes, como_data, eventos_do_calendario, hoje, ler_yaml
 
 TZID = "America/Sao_Paulo"
 DIAS = {"seg": ("MO", 0), "ter": ("TU", 1), "qua": ("WE", 2), "qui": ("TH", 3), "sex": ("FR", 4), "sab": ("SA", 5)}
@@ -140,38 +144,39 @@ def montar(nome: str, blocos: list[list[str]]) -> str:
     return "\r\n".join(saida) + "\r\n"
 
 
-def pagina_indice(proximos: list[dict]) -> str:
-    itens = "\n".join(
-        f"<li><time>{ev['inicio']:%d/%m}</time> {html.escape(ev['titulo'])}</li>" for ev in proximos
-    ) or "<li>Nada nos próximos 30 dias.</li>"
-    return f"""<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Calendário Matemática Industrial</title>
-<style>
-:root{{--bg:#fafaf7;--fg:#1d1d1b;--mut:#666;--ac:#1f6feb;--card:#fff;--bd:#e3e3dc}}
-@media (prefers-color-scheme:dark){{:root{{--bg:#141414;--fg:#ececec;--mut:#9a9a9a;--ac:#58a6ff;--card:#1d1d1d;--bd:#2c2c2c}}}}
-body{{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif}}
-main{{max-width:720px;margin:0 auto;padding:32px 16px}}
-h1{{font-size:1.6rem;margin:0 0 4px}} p{{color:var(--mut)}}
-.card{{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px;margin:16px 0}}
-code{{word-break:break-all}} a{{color:var(--ac)}} time{{font-variant-numeric:tabular-nums;color:var(--mut);margin-right:8px}}
-ul{{padding-left:18px}}
-</style></head><body><main>
-<h1>Calendário — Matemática Industrial UFPR</h1>
-<p>Gerado automaticamente a partir do repositório. Atualizado em {hoje():%d/%m/%Y}.</p>
-<div class="card"><strong>Assinar no Google Calendar:</strong> Outras agendas → <em>+</em> → <em>Do URL</em> → cole um dos links:
-<ul>
-<li>Tudo: <code id="t"></code></li>
-<li>Só prazos, eventos e provas: <code id="p"></code></li>
-<li>Só aulas: <code id="a"></code></li>
-</ul></div>
-<div class="card"><strong>Próximos 30 dias</strong><ul>{itens}</ul></div>
-<p><a href="https://github.com/holmgds-gui/mat.computacional-UFPR">Repositório</a></p>
-</main><script>
-const b=location.href.replace(/[^/]*$/,'');
-for(const[i,f]of[['t','calendario.ics'],['p','prazos.ics'],['a','aulas.ics']])document.getElementById(i).textContent=b+f;
-</script></body></html>
-"""
+def exportar_site_app() -> None:
+    """Copia os arquivos estáticos de app/static/ para site/ e gera site/estado.json público."""
+    app_dir = RAIZ / "app"
+    static_dir = app_dir / "static"
+    if not static_dir.exists():
+        return
+    for arq in ("index.html", "style.css", "app.js"):
+        orig = static_dir / arq
+        if orig.exists():
+            shutil.copy2(orig, SITE / arq)
+
+    if str(app_dir) not in sys.path:
+        sys.path.insert(0, str(app_dir))
+    import servidor  # noqa: E402
+
+    estado_pub = servidor.montar_estado_completo()
+    # Nunca expor notas/faltas reais de privado/ no JSON estático público do GitHub Pages
+    estado_pub["privado"] = {
+        "disciplinas": {},
+        "plano_proximo_semestre": ["CI185", "CMI021", "CMI022", "CMI023", "CE035"],
+        "metas_semestre": [
+            {"texto": "Importar as Fichas 2 (planos de ensino) do SIGA: datas de prova e critérios", "feita": False},
+            {"texto": "Cadastrar as datas de prova em dados/avaliacoes.yml", "feita": False},
+            {"texto": "Ir à SIEPE (19 a 23/10) e guardar o certificado", "feita": False},
+            {"texto": "Conversar com 2 ou 3 professores sobre iniciação científica em otimização ou IA", "feita": False},
+            {"texto": "Criar Lattes e ORCID", "feita": False},
+        ],
+    }
+    estado_pub["modo_estatico"] = True
+    (SITE / "estado.json").write_text(
+        json.dumps(estado_pub, ensure_ascii=False, indent=1),
+        encoding="utf-8",
+    )
 
 
 def main() -> None:
@@ -193,11 +198,8 @@ def main() -> None:
     for nome, conteudo in arquivos.items():
         (SITE / nome).write_text(conteudo, encoding="utf-8", newline="")
 
-    h = hoje()
-    proximos = sorted((e for e in eventos if e["fim"] >= h and e["inicio"] <= h + dt.timedelta(days=30)),
-                      key=lambda e: e["inicio"])
-    (SITE / "index.html").write_text(pagina_indice(proximos), encoding="utf-8")
-    print(f"Calendário: {len(blocos_prazos)} prazos/eventos, {len(blocos_aulas)} séries de aula → {SITE}")
+    exportar_site_app()
+    print(f"Calendário e App Web gerados: {len(blocos_prazos)} prazos/eventos, {len(blocos_aulas)} séries de aula → {SITE}")
 
 
 if __name__ == "__main__":

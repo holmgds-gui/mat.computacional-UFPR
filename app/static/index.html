@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIGA+ UFPR · Matemática Industrial</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-logo">∫</div>
+        <div>
+          <div class="brand-overline">UNIVERSIDADE FEDERAL DO PARANÁ · SETOR DE CIÊNCIAS EXATAS</div>
+          <div class="brand-title">
+            Matemática Industrial
+            <span class="badge-curso">CURRÍCULO 2025</span>
+          </div>
+          <div class="brand-sub" id="header-resumo">Carregando dados acadêmicos...</div>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <button class="btn btn-sm" id="btn-theme-toggle" onclick="alternarTema()" title="Alternar entre Modo Escuro (Obsidiana) e Modo Claro (Pedra)">
+          Modo Claro
+        </button>
+        <div class="git-pill" id="git-status-pill" title="Status de sincronização com o repositório">
+          <span class="dot" id="git-dot"></span>
+          <span id="git-text">Verificando...</span>
+        </div>
+        <button class="btn btn-primary" id="btn-sync-github" onclick="abrirModalSync()">
+          Sincronizar GitHub
+        </button>
+      </div>
+    </div>
+
+    <nav class="tabs-nav" role="tablist">
+      <button class="tab-btn active" data-tab="hoje" onclick="mudarAba('hoje')">01 · Hoje &amp; Horário</button>
+      <button class="tab-btn" data-tab="disciplinas" onclick="mudarAba('disciplinas')">02 · Minhas Matérias (2026.2)</button>
+      <button class="tab-btn" data-tab="grade" onclick="mudarAba('grade')">03 · Grade &amp; Planejador</button>
+      <button class="tab-btn" data-tab="avaliacoes" onclick="mudarAba('avaliacoes')">04 · Provas &amp; Calendário</button>
+      <button class="tab-btn" data-tab="atividades" onclick="mudarAba('atividades')">05 · Horas Formativas &amp; ACE</button>
+      <button class="tab-btn" data-tab="radar" onclick="mudarAba('radar')">06 · Radar UFPR &amp; Nuvem</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div id="toast-container"></div>
+
+    <!-- ==================== ABA 01: HOJE & HORÁRIO ==================== -->
+    <section id="tab-hoje" class="tab-panel active">
+      <div id="banner-confirmacao-siga" class="alert-banner warning hidden">
+        <div>
+          <strong>Conferência Pendente (SIGA):</strong> As disciplinas do 1º período (<span id="lista-a-confirmar"></span>) estão marcadas como concluídas, mas com <code>confirmado: false</code> em <code>dados/grade.yml</code>.
+        </div>
+        <button class="btn btn-sm btn-primary" onclick="confirmar1Semestre()">Confirmar 1º Semestre</button>
+      </div>
+
+      <div class="grid-2col">
+        <div class="card highlight-card">
+          <div class="card-header">
+            <h2>Agenda de Hoje</h2>
+            <span class="tag tag-blue" id="hoje-data-badge">—</span>
+          </div>
+          <div id="hoje-aulas-box" class="hoje-aulas"></div>
+          <div class="quick-links">
+            <a href="https://siga.ufpr.br/" target="_blank" rel="noopener" class="chip-link">SIGA</a>
+            <a href="https://ufprvirtual.ufpr.br/" target="_blank" rel="noopener" class="chip-link">UFPR Virtual</a>
+            <a href="https://exatas-ufpr.shinyapps.io/ensalamento/" target="_blank" rel="noopener" class="chip-link">Ensalamento Exatas</a>
+            <a href="https://matind.ufpr.br/" target="_blank" rel="noopener" class="chip-link">Coordenação CMIND</a>
+            <a href="https://siepe.ufpr.br/" target="_blank" rel="noopener" class="chip-link">17ª SIEPE</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Progresso de Integralização</h2>
+            <span class="muted-sm">META TOTAL: 2.420h</span>
+          </div>
+          <div id="progresso-barras" class="progress-list"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>Grade Horária Semanal — 2026.2</h2>
+          <span class="muted-sm">Centro Politécnico · 6 disciplinas (360h em andamento)</span>
+        </div>
+        <div class="table-wrap">
+          <table class="schedule-table" id="tabela-horario">
+            <thead>
+              <tr>
+                <th>Horário</th>
+                <th>Segunda</th>
+                <th>Terça</th>
+                <th>Quarta</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-horario"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card-header">
+            <h2>Próximos 30 Dias (Prazos &amp; Provas)</h2>
+            <button class="btn btn-sm" onclick="mudarAba('avaliacoes')">+ Nova Avaliação</button>
+          </div>
+          <div id="lista-proximos-30d"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Metas do Semestre (2026.2)</h2>
+            <span class="tag" id="metas-contador">0/0</span>
+          </div>
+          <div id="lista-metas-semestre" class="checklist"></div>
+          <div class="inline-form" style="margin-top:12px">
+            <input type="text" id="input-nova-meta" placeholder="Adicionar nova meta...">
+            <button class="btn btn-sm" onclick="adicionarMeta()">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 02: MINHAS MATÉRIAS (2026.2) ==================== -->
+    <section id="tab-disciplinas" class="tab-panel">
+      <div class="section-intro">
+        <div>
+          <h2>Minhas Matérias em Curso — 2026.2</h2>
+          <p class="muted">Simulador de média e Exame Final da UFPR, controle de faltas (limite de 25%), edição de sala/professor e consulta da ementa. Suas notas e faltas ficam salvas apenas em <code>privado/historico.yml</code>.</p>
+        </div>
+        <button class="btn btn-primary" onclick="salvarDadosPrivados()">Salvar Notas &amp; Faltas</button>
+      </div>
+
+      <div id="cards-disciplinas-atuais" class="disciplinas-grid"></div>
+    </section>
+
+    <!-- ==================== ABA 03: GRADE CURRICULAR & PLANEJADOR ==================== -->
+    <section id="tab-grade" class="tab-panel">
+      <div class="card planner-banner">
+        <div class="card-header">
+          <div>
+            <h2>Simulador do Próximo Semestre (2027.1)</h2>
+            <p class="muted-sm">Selecione abaixo as disciplinas pendentes com pré-requisitos liberados para planejar sua próxima matrícula.</p>
+          </div>
+          <div class="planner-stats">
+            <span class="tag tag-blue" id="planner-ch-total">0h planejadas</span>
+            <span class="tag" id="planner-qtd">0 disciplinas</span>
+          </div>
+        </div>
+        <div id="planner-chips" class="planner-chips"></div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label class="muted-sm">Filtro:</label>
+          <button class="chip active" data-fgrade="todas" onclick="filtrarGrade('todas', this)">Todas</button>
+          <button class="chip" data-fgrade="cursando" onclick="filtrarGrade('cursando', this)">Cursando</button>
+          <button class="chip" data-fgrade="concluida" onclick="filtrarGrade('concluida', this)">Concluídas</button>
+          <button class="chip" data-fgrade="liberadas" onclick="filtrarGrade('liberadas', this)">Pendentes Liberadas</button>
+          <button class="chip" data-fgrade="travadas" onclick="filtrarGrade('travadas', this)">Trancadas por Pré-req</button>
+        </div>
+      </div>
+
+      <div id="mapa-semestres" class="semestres-container"></div>
+
+      <div class="grid-2col" style="margin-top: 20px;">
+        <div class="card">
+          <div class="card-header">
+            <h2>Optativas Planejadas (Mínimo: 300h)</h2>
+            <span class="muted-sm">Trilhas: IA · Otimização · Dados · Computação · Gestão</span>
+          </div>
+          <div id="lista-optativas-grade"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Eletivas &amp; Optativas de Extensão (ACE)</h2>
+          </div>
+          <div id="lista-eletivas-extensao"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 04: PROVAS, TRABALHOS & CALENDÁRIO ==================== -->
+    <section id="tab-avaliacoes" class="tab-panel">
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card-header">
+            <h2>Cadastrar Prova, Trabalho ou Lista</h2>
+            <span class="muted-sm">Salva em <code>dados/avaliacoes.yml</code> + atualiza <code>.ics</code></span>
+          </div>
+          <form id="form-avaliacao" class="form-stack" onsubmit="adicionarAvaliacao(event)">
+            <div class="form-row">
+              <div class="form-field">
+                <label>Disciplina (Código)</label>
+                <select id="av-codigo" required>
+                  <option value="CE009">CE009 — Introdução à Estatística</option>
+                  <option value="CF109">CF109 — Física I</option>
+                  <option value="CI1164">CI1164 — Introd. à Computação Científica</option>
+                  <option value="TT080">TT080 — Economia de Engenharia</option>
+                  <option value="TT081">TT081 — Administração de Empresas</option>
+                  <option value="CI1068">CI1068 — Circuitos Digitais</option>
+                  <option value="OUTRA">Outro código...</option>
+                </select>
+              </div>
+              <div class="form-field hidden" id="av-codigo-outro-wrap">
+                <label>Código da Disciplina</label>
+                <input type="text" id="av-codigo-outro" placeholder="Ex: CMI021">
+              </div>
+              <div class="form-field">
+                <label>Tipo</label>
+                <select id="av-tipo">
+                  <option value="prova">Prova</option>
+                  <option value="trabalho">Trabalho</option>
+                  <option value="lista">Lista de Exercícios</option>
+                  <option value="seminario">Seminário</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label>Título / Conteúdo</label>
+              <input type="text" id="av-titulo" placeholder="Ex: Prova 1 — Estatística Descritiva e Probabilidade" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>Data</label>
+                <input type="date" id="av-data" required>
+              </div>
+              <div class="form-field">
+                <label>Horário</label>
+                <input type="time" id="av-hora" value="07:30">
+              </div>
+              <div class="form-field">
+                <label>Aviso (dias antes)</label>
+                <input type="number" id="av-alerta" value="7" min="0" max="30">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label>Observações</label>
+              <input type="text" id="av-obs" placeholder="Ex: Capítulos 1 a 4 (Bussab & Morettin)">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cadastrar Avaliação</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Avaliações Cadastradas</h2>
+            <span class="tag" id="av-total-tag">0</span>
+          </div>
+          <div id="lista-avaliacoes-cadastradas"></div>
+
+          <hr class="divider">
+          <h3>Assinatura no Google Calendar (.ics)</h3>
+          <p class="muted-sm">Adicione em <em>Outras agendas → + → Do URL</em>:</p>
+          <div class="ics-box muted-sm">
+            <div><strong>Completo:</strong> <code>https://holmgds-gui.github.io/mat.computacional-UFPR/calendario.ics</code></div>
+            <div><strong>Prazos e Provas:</strong> <code>https://holmgds-gui.github.io/mat.computacional-UFPR/prazos.ics</code></div>
+            <div><strong>Grade de Aulas:</strong> <code>https://holmgds-gui.github.io/mat.computacional-UFPR/aulas.ics</code></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2>Calendário Acadêmico Oficial UFPR (PROGRAP 2026)</h2>
+          <div class="filter-group">
+            <button class="chip active" onclick="filtrarCalendario('futuros', this)">Próximos / Atuais</button>
+            <button class="chip" onclick="filtrarCalendario('todos', this)">Ano Inteiro (2026)</button>
+            <button class="chip" onclick="filtrarCalendario('matricula', this)">Matrículas</button>
+            <button class="chip" onclick="filtrarCalendario('prazo', this)">Prazos</button>
+            <button class="chip" onclick="filtrarCalendario('exame', this)">Exames</button>
+          </div>
+        </div>
+        <div id="tabela-calendario-ufpr" class="table-wrap"></div>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 05: FORMATIVAS (200h) & EXTENSÃO (242h) ==================== -->
+    <section id="tab-atividades" class="tab-panel">
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card-header">
+            <h2>Registrar Certificado / Atividade</h2>
+            <span class="muted-sm">Salva em <code>dados/atividades.yml</code></span>
+          </div>
+          <form id="form-atividade" class="form-stack" onsubmit="adicionarAtividade(event)">
+            <div class="form-field">
+              <label>Nome da Atividade / Evento / Curso</label>
+              <input type="text" id="at-titulo" placeholder="Ex: 17ª SIEPE — Ouvinte EVINCI" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>Conta como</label>
+                <select id="at-conta" onchange="atualizarCategoriasAtividade()">
+                  <option value="formativa">Atividade Formativa (Meta: 200h)</option>
+                  <option value="extensao">Extensão Universitária — ACE (Meta: 242h)</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>Categoria do Regulamento</label>
+                <select id="at-categoria" required></select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label>Data</label>
+                <input type="date" id="at-data" required>
+              </div>
+              <div class="form-field">
+                <label>Carga Horária (horas)</label>
+                <input type="number" step="0.5" min="0.5" id="at-horas" placeholder="Ex: 12" required>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="checkbox-label">
+                <input type="checkbox" id="at-certificado">
+                PDF do comprovante salvo em <code>privado/certificados/</code>
+              </label>
+            </div>
+
+            <div class="form-field">
+              <label>Observações</label>
+              <input type="text" id="at-obs" placeholder="Opcional">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Registrar Horas</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Atividades e Certificados Registrados</h2>
+          </div>
+          <div id="lista-atividades-registradas"></div>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card-header">
+            <h2>Tetos por Categoria — Formativas (200h)</h2>
+            <span class="muted-sm">Regulamento do Colegiado (19/11/2025)</span>
+          </div>
+          <div id="painel-categorias-formativas" class="cat-grid"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Modalidades de Extensão — ACE (242h)</h2>
+            <span class="muted-sm">Mínimo obrigatório de 90h em ACE-IV</span>
+          </div>
+          <div id="painel-categorias-extensao" class="cat-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 06: RADAR UFPR & NUVEM GOOGLE ==================== -->
+    <section id="tab-radar" class="tab-panel">
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card-header">
+            <h2>Radar UFPR — Últimas Capturas</h2>
+            <input type="search" id="busca-radar" placeholder="Filtrar notícias..." oninput="renderizarRadar()">
+          </div>
+          <div id="lista-radar-noticias" class="radar-feed"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Fontes Monitoradas Diariamente (06:00)</h2>
+          </div>
+          <div id="lista-fontes-radar"></div>
+        </div>
+      </div>
+
+      <div class="card cloud-guide-card">
+        <div class="card-header">
+          <h2>Publicação no Google Cloud Run</h2>
+          <span class="tag tag-blue">Pronto para Deploy</span>
+        </div>
+        <p class="muted">Este repositório já inclui o <code>Dockerfile</code> configurado na raiz. Para publicar sua instância pessoal no Google Cloud usando sua conta acadêmica:</p>
+        <div class="steps-grid">
+          <div class="step-box">
+            <strong>01. Projeto no Google Cloud</strong>
+            <p class="muted-sm">Acesse <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">console.cloud.google.com</a>, crie um projeto e instale o <a href="https://cloud.google.com/sdk/docs/install" target="_blank" rel="noopener">Google Cloud CLI (gcloud)</a>.</p>
+          </div>
+          <div class="step-box">
+            <strong>02. Token do GitHub (para Commits na nuvem)</strong>
+            <p class="muted-sm">Em <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">GitHub → Fine-grained tokens</a>, gere um token com permissão <em>Contents: Read and write</em> para o repositório <code>mat.computacional-UFPR</code>.</p>
+          </div>
+          <div class="step-box">
+            <strong>03. Comando de Deploy</strong>
+            <pre class="code-block">gcloud run deploy siga-plus-ufpr \
+  --source . \
+  --region southamerica-east1 \
+  --set-env-vars="GITHUB_REPOSITORY=holmgds-gui/mat.computacional-UFPR,GITHUB_TOKEN=SEU_TOKEN_AQUI"</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de Sincronização GitHub -->
+  <div id="modal-sync" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="card-header">
+        <h3>Sincronizar com o GitHub</h3>
+        <button class="btn-close" onclick="fecharModalSync()">✕</button>
+      </div>
+      <p class="muted-sm">Esta ação atualiza o painel do <code>README.md</code>, regenera os calendários <code>.ics</code> e executa o commit e push das alterações em <code>dados/</code>. Seus arquivos em <code>privado/</code> continuam restritos ao seu computador.</p>
+      <div id="sync-arquivos-box" class="sync-files-list"></div>
+      <div class="form-field" style="margin-top:12px">
+        <label>Mensagem do Commit</label>
+        <input type="text" id="sync-commit-msg" value="Atualiza dados acadêmicos via SIGA+ UFPR">
+      </div>
+      <div class="modal-actions">
+        <button class="btn" onclick="fecharModalSync()">Cancelar</button>
+        <button class="btn btn-primary" id="btn-confirmar-sync" onclick="executarSyncGitHub()">Executar Commit &amp; Push</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
