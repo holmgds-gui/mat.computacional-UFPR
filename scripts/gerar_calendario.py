@@ -150,7 +150,7 @@ def exportar_site_app() -> None:
     static_dir = app_dir / "static"
     if not static_dir.exists():
         return
-    for arq in ("index.html", "style.css", "app.js"):
+    for arq in ("index.html", "style.css", "app.js", "manifest.json", "sw.js", "icon.svg"):
         orig = static_dir / arq
         if orig.exists():
             shutil.copy2(orig, SITE / arq)

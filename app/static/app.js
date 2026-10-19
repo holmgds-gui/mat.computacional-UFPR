@@ -307,12 +307,15 @@ async function carregarEstado() {
 }
 
 function mudarAba(aba) {
-  document.querySelectorAll(".tab-btn").forEach((b) => {
+  document.querySelectorAll(".tab-btn, .mob-nav-btn").forEach((b) => {
     b.classList.toggle("active", b.dataset.tab === aba);
   });
   document.querySelectorAll(".tab-panel").forEach((p) => {
     p.classList.toggle("active", p.id === `tab-${aba}`);
   });
+  if (window.innerWidth <= 768) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 }
 
 function formatarDataBR(iso) {
@@ -475,6 +478,46 @@ function renderizarAbaHoje() {
       return `<tr><td><strong>${f.rotulo}</strong></td>${cols}</tr>`;
     })
     .join("");
+
+  // Cards Verticais de Horário para Celular (Mobile Native View)
+  const nomesDiaMob = {
+    seg: "Segunda-feira",
+    ter: "Terça-feira",
+    qua: "Quarta-feira",
+    qui: "Quinta-feira",
+    sex: "Sexta-feira",
+  };
+  const mobHorEl = document.getElementById("mobile-horario-cards");
+  if (mobHorEl) {
+    mobHorEl.innerHTML = dias
+      .map((d) => {
+        const aulasDia = (horario.aulas || [])
+          .filter((a) => (a.dias || []).includes(d))
+          .sort((a, b) => a.inicio.localeCompare(b.inicio));
+        const ehHoje = hoje.dia_semana_cod === d;
+        return `
+        <div class="mob-day-card" ${ehHoje ? 'style="border-color:var(--primary)"' : ""}>
+          <div class="mob-day-title">
+            <span>${nomesDiaMob[d]} ${ehHoje ? "· HOJE" : ""}</span>
+            <span>${aulasDia.length} aula(s)</span>
+          </div>
+          ${
+            aulasDia.length === 0
+              ? `<div class="muted-sm">Sem aulas presenciais</div>`
+              : aulasDia
+                  .map(
+                    (a) => `
+                  <div class="aula-slot" style="margin-bottom:6px">
+                    <strong>${a.inicio}–${a.fim} · ${a.codigo} — ${a.nome}</strong>
+                    <small>Sala: ${a.sala} · Prof. ${a.professor}</small>
+                  </div>`
+                  )
+                  .join("")
+          }
+        </div>`;
+      })
+      .join("");
+  }
 
   // Próximos 30 dias
   const prox = [];
@@ -1247,4 +1290,35 @@ async function executarSyncGitHub() {
   }
 }
 
+/* ==================== INSTALAÇÃO NATIVA MOBILE (PWA) ==================== */
+let DEFERRED_PROMPT = null;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  DEFERRED_PROMPT = e;
+});
+
+async function instalarAppCelular() {
+  if (DEFERRED_PROMPT) {
+    DEFERRED_PROMPT.prompt();
+    const { outcome } = await DEFERRED_PROMPT.userChoice;
+    if (outcome === "accepted") {
+      DEFERRED_PROMPT = null;
+    }
+    return;
+  }
+  document.getElementById("modal-install").classList.remove("hidden");
+}
+
+function fecharModalInstall() {
+  document.getElementById("modal-install").classList.add("hidden");
+}
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  });
+}
+
 window.addEventListener("DOMContentLoaded", carregarEstado);
+

@@ -2,7 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111317">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SIGA+ UFPR">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="apple-touch-icon" href="./icon.svg">
   <title>SIGA+ UFPR · Matemática Industrial</title>
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -22,6 +30,9 @@
       </div>
 
       <div class="topbar-actions">
+        <button class="btn btn-sm" id="btn-install-pwa" onclick="instalarAppCelular()" title="Instalar aplicativo nativo no celular ou PC">
+          Instalar App
+        </button>
         <button class="btn btn-sm" id="btn-theme-toggle" onclick="alternarTema()" title="Alternar entre Modo Escuro (Obsidiana) e Modo Claro (Pedra)">
           Modo Claro
         </button>
@@ -87,7 +98,8 @@
           <h2>Grade Horária Semanal — 2026.2</h2>
           <span class="muted-sm">Centro Politécnico · 6 disciplinas (360h em andamento)</span>
         </div>
-        <div class="table-wrap">
+        <div id="mobile-horario-cards" class="mobile-schedule-list"></div>
+        <div class="table-wrap desktop-schedule-table">
           <table class="schedule-table" id="tabela-horario">
             <thead>
               <tr>
@@ -434,6 +446,58 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal de Instalação Nativa no Celular (PWA) -->
+  <div id="modal-install" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="card-header">
+        <h3>Instalar SIGA+ UFPR no Celular</h3>
+        <button class="btn-close" onclick="fecharModalInstall()">✕</button>
+      </div>
+      <p class="muted-sm">Este mesmo link funciona como um <strong>aplicativo nativo em tela cheia (PWA)</strong>, com ícone próprio e suporte offline no Centro Politécnico:</p>
+      <div class="steps-grid" style="grid-template-columns:1fr;margin-top:10px">
+        <div class="step-box">
+          <strong>No Android (Chrome / Edge / Samsung Internet)</strong>
+          <p class="muted-sm">Toque no menu <strong>⋮</strong> (canto superior direito do navegador) e selecione <strong>"Instalar aplicativo"</strong> ou <strong>"Adicionar à tela inicial"</strong>.</p>
+        </div>
+        <div class="step-box">
+          <strong>No iPhone / iOS (Safari)</strong>
+          <p class="muted-sm">Toque no botão <strong>Compartilhar</strong> (ícone de quadrado com seta para cima na barra inferior) e escolha <strong>"Adicionar à Tela de Início"</strong>.</p>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn btn-primary" onclick="fecharModalInstall()">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de Navegação Inferior Nativa (Exibida no Celular) -->
+  <nav class="mobile-bottom-nav" role="tablist" aria-label="Navegação Mobile">
+    <button class="mob-nav-btn active" data-tab="hoje" onclick="mudarAba('hoje')">
+      <span class="mob-idx">01</span>
+      <span class="mob-lbl">Hoje</span>
+    </button>
+    <button class="mob-nav-btn" data-tab="disciplinas" onclick="mudarAba('disciplinas')">
+      <span class="mob-idx">02</span>
+      <span class="mob-lbl">Matérias</span>
+    </button>
+    <button class="mob-nav-btn" data-tab="grade" onclick="mudarAba('grade')">
+      <span class="mob-idx">03</span>
+      <span class="mob-lbl">Grade</span>
+    </button>
+    <button class="mob-nav-btn" data-tab="avaliacoes" onclick="mudarAba('avaliacoes')">
+      <span class="mob-idx">04</span>
+      <span class="mob-lbl">Provas</span>
+    </button>
+    <button class="mob-nav-btn" data-tab="atividades" onclick="mudarAba('atividades')">
+      <span class="mob-idx">05</span>
+      <span class="mob-lbl">Horas</span>
+    </button>
+    <button class="mob-nav-btn" data-tab="radar" onclick="mudarAba('radar')">
+      <span class="mob-idx">06</span>
+      <span class="mob-lbl">Radar</span>
+    </button>
+  </nav>
 
   <script src="./app.js"></script>
 </body>

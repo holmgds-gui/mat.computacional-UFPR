@@ -819,3 +819,169 @@ code {
   box-shadow: var(--shadow);
   font-size: 0.85rem;
 }
+
+/* ==================== NATIVE MOBILE APP SHELL (PWA) ==================== */
+.mobile-bottom-nav {
+  display: none;
+}
+
+.mobile-schedule-list {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .topbar {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .topbar-inner {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+  }
+
+  .brand-overline {
+    display: none;
+  }
+
+  .brand-title {
+    font-size: 1.02rem;
+  }
+
+  .brand-sub {
+    font-size: 0.7rem;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .git-pill {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  /* Esconde abas de topo no celular e usa a barra nativa inferior */
+  .tabs-nav {
+    display: none;
+  }
+
+  .container {
+    padding: 14px 12px 32px;
+  }
+
+  .card {
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+
+  .disciplinas-grid,
+  .semestres-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Evita zoom automático do Safari iOS ao tocar em campos de texto */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  .disc-notas-grid input {
+    padding: 6px 2px;
+    font-size: 15px !important;
+  }
+
+  /* Grade horária vertical nativa para celular */
+  .desktop-schedule-table {
+    display: none;
+  }
+
+  .mobile-schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mob-day-card {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 12px;
+  }
+
+  .mob-day-title {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Barra Inferior Estilo App Nativo */
+  .mobile-bottom-nav {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-elev);
+    border-top: 1px solid var(--border);
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
+    z-index: 90;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.35);
+  }
+
+  .mob-nav-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .mob-nav-btn .mob-idx {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .mob-nav-btn .mob-lbl {
+    font-size: 0.68rem;
+    font-weight: 500;
+  }
+
+  .mob-nav-btn.active {
+    color: var(--primary);
+    background: var(--bg-input);
+  }
+
+  #toast-container {
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+    right: 12px;
+  }
+}
