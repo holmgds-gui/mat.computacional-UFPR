@@ -49,6 +49,49 @@ function mostrarToast(msg) {
   setTimeout(() => el.remove(), 3800);
 }
 
+function obterTokenGitHub() {
+  return (localStorage.getItem("siga_gh_token") || "").trim();
+}
+
+function salvarTokenNavegador(val) {
+  localStorage.setItem("siga_gh_token", (val || "").trim());
+  mostrarToast("Token do GitHub salvo neste navegador.");
+}
+
+async function ghAtualizarArquivo(caminho, transformador, msgCommit) {
+  const token = obterTokenGitHub();
+  if (!token) return false;
+  const repo = (ESTADO && ESTADO.git && ESTADO.git.github_repo) || "holmgds-gui/mat.computacional-UFPR";
+  const url = `https://api.github.com/repos/${repo}/contents/${caminho}`;
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    Accept: "application/vnd.github+json",
+    "Content-Type": "application/json",
+  };
+  const rGet = await fetch(url, { headers });
+  if (!rGet.ok) throw new Error(`GitHub API (${rGet.status}) ao ler ${caminho}`);
+  const meta = await rGet.json();
+  const textoAtual = new TextDecoder().decode(
+    Uint8Array.from(atob(meta.content.replace(/\n/g, "")), (c) => c.charCodeAt(0))
+  );
+  const novoTexto = transformador(textoAtual);
+  if (novoTexto === textoAtual) return true;
+  const bytes = new TextEncoder().encode(novoTexto);
+  let bin = "";
+  bytes.forEach((b) => (bin += String.fromCharCode(b)));
+  const rPut = await fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify({
+      message: msgCommit || `Atualiza ${caminho} via SIGA+ UFPR`,
+      content: btoa(bin),
+      sha: meta.sha,
+    }),
+  });
+  if (!rPut.ok) throw new Error(`GitHub API (${rPut.status}) ao gravar ${caminho}`);
+  return true;
+}
+
 async function apiPost(url, corpo = {}) {
   if (ESTADO && ESTADO.modo_estatico) {
     if (url === "/api/privado/salvar") {
@@ -59,7 +102,105 @@ async function apiPost(url, corpo = {}) {
       renderizarTudo();
       return { ok: true, estado: ESTADO };
     }
-    throw new Error("Edição direta de YAML requer o backend (Cloud Run ou servidor local).");
+    if (url === "/api/grade/confirmar-1sem") {
+      ESTADO.progresso.a_confirmar_siga = [];
+      if (obterTokenGitHub()) {
+        await ghAtualizarArquivo(
+          "dados/grade.yml",
+          (txt) => txt.replace(/confirmado:\s*false/g, "confirmado: true"),
+          "Confirma disciplinas do 1º semestre no SIGA"
+        );
+      }
+      renderizarTudo();
+      return { ok: true, confirmadas: 5, estado: ESTADO };
+    }
+    if (url === "/api/grade/atualizar") {
+      const cod = String(corpo.codigo || "").toUpperCase();
+      Object.values(ESTADO.grade.semestres || {}).forEach((lista) =>
+        lista.forEach((d) => {
+          if (d.codigo === cod) {
+            if (corpo.status) d.status = corpo.status;
+            d.confirmado = true;
+          }
+        })
+      );
+      (ESTADO.grade.optativas_planejadas || []).forEach((o) => {
+        if (o.codigo === cod && corpo.status) o.status = corpo.status;
+      });
+      if (obterTokenGitHub()) {
+        await ghAtualizarArquivo(
+          "dados/grade.yml",
+          (txt) =>
+            txt
+              .split("\n")
+              .map((lin) =>
+                lin.includes(`codigo: ${cod}`)
+                  ? lin.replace(/status:\s*[a-zA-Z_]+/, `status: ${corpo.status}`).replace(/confirmado:\s*false/, "confirmado: true")
+                  : lin
+              )
+              .join("\n"),
+          `Atualiza ${cod} para ${corpo.status}`
+        );
+      }
+      renderizarTudo();
+      return { ok: true, estado: ESTADO };
+    }
+    if (url === "/api/avaliacoes/adicionar") {
+      ESTADO.avaliacoes = ESTADO.avaliacoes || [];
+      const item = {
+        codigo: String(corpo.codigo).toUpperCase().trim(),
+        titulo: String(corpo.titulo).trim(),
+        data: corpo.data,
+        tipo: corpo.tipo || "prova",
+      };
+      if (corpo.hora) item.hora = corpo.hora;
+      if (corpo.alerta) item.alerta = Number(corpo.alerta);
+      if (corpo.obs) item.obs = corpo.obs;
+      ESTADO.avaliacoes.push(item);
+      if (obterTokenGitHub()) {
+        await ghAtualizarArquivo(
+          "dados/avaliacoes.yml",
+          (txt) => {
+            const base = txt.replace(/^avaliacoes:\s*\[\]\s*$/m, "avaliacoes:");
+            return base.replace(/\s*$/, "") + "\n  - " + JSON.stringify(item) + "\n";
+          },
+          `Cadastra avaliação: ${item.codigo} - ${item.titulo}`
+        );
+      }
+      renderizarTudo();
+      return { ok: true, estado: ESTADO };
+    }
+    if (url === "/api/atividades/adicionar") {
+      ESTADO.atividades = ESTADO.atividades || [];
+      const item = {
+        titulo: String(corpo.titulo).trim(),
+        data: corpo.data,
+        horas: Number(String(corpo.horas).replace(",", ".")),
+        conta_como: corpo.conta_como,
+        categoria: corpo.categoria,
+        certificado: Boolean(corpo.certificado),
+      };
+      if (corpo.obs) item.obs = corpo.obs;
+      ESTADO.atividades.push(item);
+      if (obterTokenGitHub()) {
+        await ghAtualizarArquivo(
+          "dados/atividades.yml",
+          (txt) => {
+            const base = txt.replace(/^atividades:\s*\[\]\s*$/m, "atividades:");
+            return base.replace(/\s*$/, "") + "\n  - " + JSON.stringify(item) + "\n";
+          },
+          `Registra atividade: ${item.titulo} (${item.horas}h)`
+        );
+      }
+      renderizarTudo();
+      return { ok: true, estado: ESTADO };
+    }
+    if (url === "/api/github/sincronizar") {
+      if (!obterTokenGitHub()) {
+        throw new Error("Cole seu GitHub Token no campo acima para sincronizar direto da nuvem.");
+      }
+      return { ok: true, mensagem: "Token ativo! Todas as alterações já são gravadas direto no GitHub." };
+    }
   }
   const resp = await fetch(url, {
     method: "POST",
@@ -1004,9 +1145,15 @@ function renderizarRadar() {
 function abrirModalSync() {
   const modal = document.getElementById("modal-sync");
   modal.classList.remove("hidden");
+  const inpTok = document.getElementById("sync-gh-token");
+  if (inpTok) inpTok.value = obterTokenGitHub();
   const mods = (ESTADO && ESTADO.git && ESTADO.git.modificados) || [];
   const box = document.getElementById("sync-arquivos-box");
-  if (mods.length === 0) {
+  if (ESTADO && ESTADO.modo_estatico) {
+    box.innerHTML = obterTokenGitHub()
+      ? "Modo Nuvem Ativo: Token configurado. Suas edições já fazem commit direto na API do GitHub."
+      : "Modo Nuvem: Cole seu GitHub Token acima para gravar alterações direto no repositório.";
+  } else if (mods.length === 0) {
     box.innerHTML = "Nenhuma modificação pendente (repositório sincronizado).";
   } else {
     box.innerHTML = mods.map((m) => `<div>${m}</div>`).join("");

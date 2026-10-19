@@ -389,25 +389,24 @@
 
       <div class="card cloud-guide-card">
         <div class="card-header">
-          <h2>Publicação no Google Cloud Run</h2>
-          <span class="tag tag-blue">Pronto para Deploy</span>
+          <h2>Hospedagem Gratuita Google Firebase (Plano Spark — R$ 0, sem cartão/depósito)</h2>
+          <span class="tag tag-green">Sem Faturamento</span>
         </div>
-        <p class="muted">Este repositório já inclui o <code>Dockerfile</code> configurado na raiz. Para publicar sua instância pessoal no Google Cloud usando sua conta acadêmica:</p>
+        <p class="muted">O Google Cloud Run exige conta de faturamento (depósito de R$ 200), mas o <strong>Google Firebase (Plano Spark)</strong> usa o mesmo projeto <code>mat-computacional-ufpr</code> de forma <strong>100% gratuita e sem pedir cartão ou depósito</strong>. Além disso, o app já realiza commits direto pela API do GitHub pelo seu navegador:</p>
         <div class="steps-grid">
           <div class="step-box">
-            <strong>01. Projeto no Google Cloud</strong>
-            <p class="muted-sm">Acesse <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">console.cloud.google.com</a>, crie um projeto e instale o <a href="https://cloud.google.com/sdk/docs/install" target="_blank" rel="noopener">Google Cloud CLI (gcloud)</a>.</p>
+            <strong>01. Abrir seu projeto no Firebase (Gratuito)</strong>
+            <p class="muted-sm">Acesse <a href="https://console.firebase.google.com/" target="_blank" rel="noopener">console.firebase.google.com</a>, clique em <em>Create a project</em> (ou <em>Add project</em>) e selecione o seu projeto existente <code>mat-computacional-ufpr</code>. Ele entra direto no plano <strong>Spark (Grátis, sem cobrança)</strong>.</p>
           </div>
           <div class="step-box">
-            <strong>02. Token do GitHub (para Commits na nuvem)</strong>
-            <p class="muted-sm">Em <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">GitHub → Fine-grained tokens</a>, gere um token com permissão <em>Contents: Read and write</em> para o repositório <code>mat.computacional-UFPR</code>.</p>
+            <strong>02. Conectar seu Token do GitHub no App</strong>
+            <p class="muted-sm">Clique no botão <strong>Sincronizar GitHub</strong> no topo desta página e cole um <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">Fine-grained Token do GitHub</a> (permissão <em>Contents: Read &amp; Write</em>). O token fica salvo só no seu navegador e permite gravar provas, horas e matérias direto da nuvem!</p>
           </div>
           <div class="step-box">
-            <strong>03. Comando de Deploy</strong>
-            <pre class="code-block">gcloud run deploy siga-plus-ufpr \
-  --source . \
-  --region southamerica-east1 \
-  --set-env-vars="GITHUB_REPOSITORY=holmgds-gui/mat.computacional-UFPR,GITHUB_TOKEN=SEU_TOKEN_AQUI"</pre>
+            <strong>03. Links na Nuvem ativos</strong>
+            <p class="muted-sm">Seu app já está publicado em:<br>
+            • <a href="https://holmgds-gui.github.io/mat.computacional-UFPR/" target="_blank" rel="noopener">holmgds-gui.github.io/mat.computacional-UFPR</a><br>
+            • E pronto para <code>mat-computacional-ufpr.web.app</code> via Firebase Hosting!</p>
           </div>
         </div>
       </div>
@@ -418,18 +417,22 @@
   <div id="modal-sync" class="modal-backdrop hidden">
     <div class="modal-card">
       <div class="card-header">
-        <h3>Sincronizar com o GitHub</h3>
+        <h3>Sincronização &amp; Credencial GitHub</h3>
         <button class="btn-close" onclick="fecharModalSync()">✕</button>
       </div>
-      <p class="muted-sm">Esta ação atualiza o painel do <code>README.md</code>, regenera os calendários <code>.ics</code> e executa o commit e push das alterações em <code>dados/</code>. Seus arquivos em <code>privado/</code> continuam restritos ao seu computador.</p>
+      <p class="muted-sm">No computador local (<code>127.0.0.1:8080</code>), o app usa seu Git local automaticamente. Na nuvem (Firebase / GitHub Pages), informe seu <strong>GitHub Personal Access Token</strong> abaixo (salvo apenas neste navegador) para gravar alterações direto no repositório:</p>
+      <div class="form-field" style="margin-bottom:12px">
+        <label>GITHUB TOKEN (SALVO APENAS NO SEU NAVEGADOR)</label>
+        <input type="password" id="sync-gh-token" placeholder="github_pat_... ou ghp_..." onchange="salvarTokenNavegador(this.value)">
+      </div>
       <div id="sync-arquivos-box" class="sync-files-list"></div>
       <div class="form-field" style="margin-top:12px">
         <label>Mensagem do Commit</label>
         <input type="text" id="sync-commit-msg" value="Atualiza dados acadêmicos via SIGA+ UFPR">
       </div>
       <div class="modal-actions">
-        <button class="btn" onclick="fecharModalSync()">Cancelar</button>
-        <button class="btn btn-primary" id="btn-confirmar-sync" onclick="executarSyncGitHub()">Executar Commit &amp; Push</button>
+        <button class="btn" onclick="fecharModalSync()">Fechar</button>
+        <button class="btn btn-primary" id="btn-confirmar-sync" onclick="executarSyncGitHub()">Sincronizar Agora</button>
       </div>
     </div>
   </div>

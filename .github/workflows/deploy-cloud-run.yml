@@ -1,4 +1,4 @@
-name: Deploy no Google Cloud Run
+name: Deploy no Google Firebase Hosting (Spark Gratuito)
 
 on:
   workflow_dispatch:
@@ -8,39 +8,37 @@ on:
       - "app/**"
       - "dados/**"
       - "scripts/**"
-      - "Dockerfile"
+      - "firebase.json"
+      - ".firebaserc"
       - ".github/workflows/deploy-cloud-run.yml"
 
 jobs:
-  deploy:
+  deploy-firebase:
     runs-on: ubuntu-latest
     env:
-      GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-      GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+      FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
     steps:
-      - name: Verificar credenciais do Google Cloud
-        if: env.GCP_PROJECT_ID == '' || env.GCP_SA_KEY == ''
-        run: echo "Secrets GCP_PROJECT_ID / GCP_SA_KEY ainda não configurados. Pulando deploy no Cloud Run."
+      - name: Verificar credencial do Firebase
+        if: env.FIREBASE_SERVICE_ACCOUNT == ''
+        run: echo "Secret FIREBASE_SERVICE_ACCOUNT opcional ainda não configurado. O app já está publicado gratuitamente no GitHub Pages."
 
       - uses: actions/checkout@v5
-        if: env.GCP_PROJECT_ID != '' && env.GCP_SA_KEY != ''
+        if: env.FIREBASE_SERVICE_ACCOUNT != ''
 
-      - name: Autenticar no Google Cloud
-        if: env.GCP_PROJECT_ID != '' && env.GCP_SA_KEY != ''
-        uses: google-github-actions/auth@v2
+      - uses: actions/setup-python@v6
+        if: env.FIREBASE_SERVICE_ACCOUNT != ''
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          python-version: "3.12"
+          cache: pip
 
-      - name: Deploy no Cloud Run (southamerica-east1)
-        if: env.GCP_PROJECT_ID != '' && env.GCP_SA_KEY != ''
-        uses: google-github-actions/deploy-cloudrun@v2
+      - run: pip install -r requirements.txt && python scripts/gerar_calendario.py
+        if: env.FIREBASE_SERVICE_ACCOUNT != ''
+
+      - name: Deploy para Firebase Hosting (Plano Spark Gratuito)
+        if: env.FIREBASE_SERVICE_ACCOUNT != ''
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          service: siga-plus-ufpr
-          region: southamerica-east1
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          source: .
-          flags: "--allow-unauthenticated"
-          env_vars: |
-            GITHUB_REPOSITORY=${{ github.repository }}
-            GITHUB_TOKEN=${{ secrets.PAT_GITHUB || secrets.GITHUB_TOKEN }}
-            ALLOWED_EMAIL=${{ secrets.ALLOWED_EMAIL }}
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          channelId: live
+          projectId: mat-computacional-ufpr
