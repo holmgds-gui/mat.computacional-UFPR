@@ -32,6 +32,8 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 ### 📡 Últimas do radar
 
+- 19/10 · [Semana de Ensino, Pesquisa e Extensão da UFPR começa nesta segunda-feira (19); veja a programação](https://ufpr.br/semana-de-ensino-pesquisa-e-extensao-da-ufpr-comeca-nesta-segunda-feira-19-veja-a-programacao/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
+- 19/10 · [Siepe: Veja as novidades do Enec, maior evento de extensão e cultura da UFPR](https://ufpr.br/siepe-veja-as-novidades-do-enec-maior-evento-de-extensao-e-cultura-da-ufpr/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 17/10 · [Internacionalização, inovação e tecnologia são destaques da programação da 17ª Siepe](https://ufpr.br/internacionalizacao-inovacao-e-tecnologia-sao-destaques-da-programacao-da-17a-siepe/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 16/10 · [Página atualizada: Nossos Alunos](https://matind.ufpr.br/nossos-alunos/) — _Coordenação de Matemática Industrial (páginas)_
 - 13/10 · [Página atualizada: Nossos Alunos](https://matind.ufpr.br/nossos-alunos/) — _Coordenação de Matemática Industrial (páginas)_
