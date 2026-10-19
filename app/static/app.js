@@ -195,6 +195,72 @@ async function apiPost(url, corpo = {}) {
       renderizarTudo();
       return { ok: true, estado: ESTADO };
     }
+    if (url === "/api/avaliacoes/remover") {
+      const idx = Number(corpo.indice);
+      ESTADO.avaliacoes = ESTADO.avaliacoes || [];
+      if (idx >= 0 && idx < ESTADO.avaliacoes.length) {
+        ESTADO.avaliacoes.splice(idx, 1);
+      }
+      if (obterTokenGitHub()) {
+        await ghAtualizarArquivo(
+          "dados/avaliacoes.yml",
+          (txt) => {
+            const cab = txt.split(/^avaliacoes:/m)[0];
+            if (!ESTADO.avaliacoes.length) return cab + "avaliacoes: []\n";
+            return cab + "avaliacoes:\n" + ESTADO.avaliacoes.map((a) => "  - " + JSON.stringify(a)).join("\n") + "\n";
+          },
+          "Remove avaliação via SIGA+ UFPR"
+        );
+      }
+      renderizarTudo();
+      return { ok: true, estado: ESTADO };
+    }
+    if (url === "/api/atividades/remover") {
+      const idx = Number(corpo.indice);
+      ESTADO.atividades = ESTADO.atividades || [];
+      if (idx >= 0 && idx < ESTADO.atividades.length) {
+        ESTADO.atividades.splice(idx, 1);
+      }
+      if (obterTokenGitHub()) {
+        await ghAtualizarArquivo(
+          "dados/atividades.yml",
+          (txt) => {
+            const cab = txt.split(/^atividades:/m)[0];
+            if (!ESTADO.atividades.length) return cab + "atividades: []\n";
+            return cab + "atividades:\n" + ESTADO.atividades.map((a) => "  - " + JSON.stringify(a)).join("\n") + "\n";
+          },
+          "Remove atividade via SIGA+ UFPR"
+        );
+      }
+      renderizarTudo();
+      return { ok: true, estado: ESTADO };
+    }
+    if (url === "/api/horario/atualizar") {
+      const cod = String(corpo.codigo || "").toUpperCase();
+      (ESTADO.horario.aulas || []).forEach((a) => {
+        if (a.codigo === cod) {
+          a.professor = corpo.professor;
+          a.sala = corpo.sala;
+        }
+      });
+      if (obterTokenGitHub()) {
+        await ghAtualizarArquivo(
+          "dados/horario-2026-2.yml",
+          (txt) =>
+            txt
+              .split("\n")
+              .map((lin) =>
+                lin.includes(`codigo: ${cod}`)
+                  ? lin.replace(/professor:\s*"[^"]*"/, `professor: "${corpo.professor}"`).replace(/sala:\s*"[^"]*"/, `sala: "${corpo.sala}"`)
+                  : lin
+              )
+              .join("\n"),
+          `Atualiza sala/professor de ${cod}`
+        );
+      }
+      renderizarTudo();
+      return { ok: true, estado: ESTADO };
+    }
     if (url === "/api/github/sincronizar") {
       if (!obterTokenGitHub()) {
         throw new Error("Cole seu GitHub Token no campo acima para sincronizar direto da nuvem.");

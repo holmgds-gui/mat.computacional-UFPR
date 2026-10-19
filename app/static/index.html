@@ -389,24 +389,22 @@
 
       <div class="card cloud-guide-card">
         <div class="card-header">
-          <h2>Hospedagem Gratuita Google Firebase (Plano Spark — R$ 0, sem cartão/depósito)</h2>
-          <span class="tag tag-green">Sem Faturamento</span>
+          <h2>Como funciona a Sincronização (GitHub Pages + Servidor Local)</h2>
+          <span class="tag tag-green">Ativo · GitHub Pages</span>
         </div>
-        <p class="muted">O Google Cloud Run exige conta de faturamento (depósito de R$ 200), mas o <strong>Google Firebase (Plano Spark)</strong> usa o mesmo projeto <code>mat-computacional-ufpr</code> de forma <strong>100% gratuita e sem pedir cartão ou depósito</strong>. Além disso, o app já realiza commits direto pela API do GitHub pelo seu navegador:</p>
+        <p class="muted">Este aplicativo opera diretamente integrado ao seu repositório <code>holmgds-gui/mat.computacional-UFPR</code> sem custo e sem servidores intermediários:</p>
         <div class="steps-grid">
           <div class="step-box">
-            <strong>01. Abrir seu projeto no Firebase (Gratuito)</strong>
-            <p class="muted-sm">Acesse <a href="https://console.firebase.google.com/" target="_blank" rel="noopener">console.firebase.google.com</a>, clique em <em>Create a project</em> (ou <em>Add project</em>) e selecione o seu projeto existente <code>mat-computacional-ufpr</code>. Ele entra direto no plano <strong>Spark (Grátis, sem cobrança)</strong>.</p>
+            <strong>01. Acesso Web (Celular / Qualquer PC)</strong>
+            <p class="muted-sm">Acesse <a href="https://holmgds-gui.github.io/mat.computacional-UFPR/" target="_blank" rel="noopener">holmgds-gui.github.io/mat.computacional-UFPR</a>. O GitHub Actions atualiza a página automaticamente todo dia às 06:00 e a cada novo commit.</p>
           </div>
           <div class="step-box">
-            <strong>02. Conectar seu Token do GitHub no App</strong>
-            <p class="muted-sm">Clique no botão <strong>Sincronizar GitHub</strong> no topo desta página e cole um <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">Fine-grained Token do GitHub</a> (permissão <em>Contents: Read &amp; Write</em>). O token fica salvo só no seu navegador e permite gravar provas, horas e matérias direto da nuvem!</p>
+            <strong>02. Gravar dados direto pelo navegador</strong>
+            <p class="muted-sm">Clique em <strong>Sincronizar GitHub</strong> no topo e cole um <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">Fine-grained Token do GitHub</a> (permissão <em>Contents: Read &amp; Write</em>). O token fica salvo só no seu navegador e faz commit direto em <code>dados/*.yml</code>.</p>
           </div>
           <div class="step-box">
-            <strong>03. Links na Nuvem ativos</strong>
-            <p class="muted-sm">Seu app já está publicado em:<br>
-            • <a href="https://holmgds-gui.github.io/mat.computacional-UFPR/" target="_blank" rel="noopener">holmgds-gui.github.io/mat.computacional-UFPR</a><br>
-            • E pronto para <code>mat-computacional-ufpr.web.app</code> via Firebase Hosting!</p>
+            <strong>03. Uso Local Completo (Python)</strong>
+            <p class="muted-sm">No seu computador, rode <code>python app/servidor.py</code> e abra <code>http://127.0.0.1:8080</code> para gravar suas notas e faltas direto em <code>privado/historico.yml</code>.</p>
           </div>
         </div>
       </div>
