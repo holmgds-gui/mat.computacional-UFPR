@@ -7,17 +7,17 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 22/10/2026 (quinta) · semestre 2026-2 · 2º período
+**Hoje:** 23/10/2026 (sexta) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 07:30 CE009 Introdução à Estatística · 09:30 CF109 Física I · 15:30 CI1068 Circuitos Digitais
+**Aulas de hoje:** 13:30 CI1164 Introdução à Computação Científica
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 24/08–23/10 | Entrega de certificados de atividades formativas (2º sem) | **em andamento** — termina em 1 dia(s) (23/10) |
-| 13/10–23/10 | Exame de aproveitamento (2º sem) | **em andamento** — termina em 1 dia(s) (23/10) |
-| 19/10–23/10 | 17ª SIEPE (inclui EVINCI/EINTI) — assistir apresentações de IC | **em andamento** — termina em 1 dia(s) (23/10) |
+| 24/08–23/10 | Entrega de certificados de atividades formativas (2º sem) | **em andamento** — termina hoje |
+| 13/10–23/10 | Exame de aproveitamento (2º sem) | **em andamento** — termina hoje |
+| 19/10–23/10 | 17ª SIEPE (inclui EVINCI/EINTI) — assistir apresentações de IC | **em andamento** — termina hoje |
 
 ### 📊 Integralização
 
@@ -32,6 +32,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 ### 📡 Últimas do radar
 
+- 23/10 · [A Universidade encontra a sociedade: o papel da extensão na Siepe 2026](https://ufpr.br/a-universidade-encontra-a-sociedade-o-papel-da-extensao-na-siepe-2026/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 22/10 · [Novidade na Siepe, Jornadas de Internacionalização promovem trocas sobre mobilidade acadêmica](https://ufpr.br/novidade-na-siepe-jornadas-de-internacionalizacao-promovem-trocas-sobre-mobilidade-academica/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 21/10 · [Webinar sobre “Editoração Científica, Ciência Aberta e Inteligência Artificial” tem transmissão da UFPR TV](https://ufpr.br/webinar-sobre-editoracao-cientifica-ciencia-aberta-e-inteligencia-artificial-tem-transmissao-da-ufpr-tv/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 20/10 · [Enfermagem UFPR oferece curso de extensão em primeiros socorros](https://ufpr.br/enfermagem-ufpr-oferece-curso-de-extensao-em-primeiros-socorros/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
@@ -39,9 +40,8 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 - 20/10 · [Página atualizada: Laboratórios](https://matind.ufpr.br/laboratorios/) — _Coordenação de Matemática Industrial (páginas)_
 - 19/10 · [Semana de Ensino, Pesquisa e Extensão da UFPR começa nesta segunda-feira (19); veja a programação](https://ufpr.br/semana-de-ensino-pesquisa-e-extensao-da-ufpr-comeca-nesta-segunda-feira-19-veja-a-programacao/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 19/10 · [Siepe: Veja as novidades do Enec, maior evento de extensão e cultura da UFPR](https://ufpr.br/siepe-veja-as-novidades-do-enec-maior-evento-de-extensao-e-cultura-da-ufpr/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 17/10 · [Internacionalização, inovação e tecnologia são destaques da programação da 17ª Siepe](https://ufpr.br/internacionalizacao-inovacao-e-tecnologia-sao-destaques-da-programacao-da-17a-siepe/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 22/10/2026.</sub>
+<sub>Painel atualizado automaticamente em 23/10/2026.</sub>
 <!-- painel:fim -->
 
 ---
