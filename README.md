@@ -7,15 +7,15 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 05/11/2026 (quinta) · semestre 2026-2 · 2º período
+**Hoje:** 06/11/2026 (sexta) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 07:30 CE009 Introdução à Estatística · 09:30 CF109 Física I · 15:30 CI1068 Circuitos Digitais
+**Aulas de hoje:** 13:30 CI1164 Introdução à Computação Científica
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 05/12 | Último dia letivo do 2º semestre | em 30 dias |
+| 05/12 | Último dia letivo do 2º semestre | em 29 dias |
 
 ### 📊 Integralização
 
@@ -39,7 +39,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 - 19/10 · [Semana de Ensino, Pesquisa e Extensão da UFPR começa nesta segunda-feira (19); veja a programação](https://ufpr.br/semana-de-ensino-pesquisa-e-extensao-da-ufpr-comeca-nesta-segunda-feira-19-veja-a-programacao/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 19/10 · [Siepe: Veja as novidades do Enec, maior evento de extensão e cultura da UFPR](https://ufpr.br/siepe-veja-as-novidades-do-enec-maior-evento-de-extensao-e-cultura-da-ufpr/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 05/11/2026.</sub>
+<sub>Painel atualizado automaticamente em 06/11/2026.</sub>
 <!-- painel:fim -->
 
 ---
