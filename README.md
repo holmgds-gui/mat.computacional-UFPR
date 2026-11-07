@@ -7,15 +7,16 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 06/11/2026 (sexta) · semestre 2026-2 · 2º período
+**Hoje:** 07/11/2026 (sábado) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 13:30 CI1164 Introdução à Computação Científica
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 05/12 | Último dia letivo do 2º semestre | em 29 dias |
+| 05/12 | Último dia letivo do 2º semestre | em 28 dias |
+| 07/12–11/12 | Exames finais do 2º semestre | em 30 dias |
+| 07/12–12/02 | Período especial do 2º semestre | em 30 dias |
 
 ### 📊 Integralização
 
@@ -30,16 +31,16 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 ### 📡 Últimas do radar
 
+- 07/11 · [Achados da 17ª Siepe: diversidade dos trabalhos é a marca do evento](https://ufpr.br/achados-da-17a-siepe-diversidade-dos-trabalhos-e-a-marca-do-evento/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
+- 07/11 · [UFPR lança edital para empresas integrarem Associação Tecnológica do Centro de Competência EMBRAPII UFPR em Hidrogênio](https://ufpr.br/ufpr-lanca-edital-para-empresas-integrarem-associacao-tecnologica-do-centro-de-competencia-embrapii-ufpr-em-hidrogenio/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
+- 07/11 · [Pesquisa e projeto de extensão da UFPR recebem destaque em Prêmio de Direitos Humanos](https://ufpr.br/pesquisa-e-projeto-de-extensao-da-ufpr-recebem-destaque-em-premio-de-direitos-humanos/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
+- 07/11 · [9º Pitch Day Experience começa nesta quarta (4) com programação voltada à inovação](https://ufpr.br/9o-pitch-day-experience-comeca-nesta-quarta-4-com-programacao-voltada-a-inovacao-e-ao-desenvolvimento-profissional/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
+- 07/11 · [Publicado Edital nº 10/2026 PROPG/ICT: Programa de Iniciação Científica e Tecnológica Integrada à Pós-graduação Stricto Sensu ICT+Pós – Edital Geral – 2026.2](https://ufpr.br/propg/publicado-edital-no-10-2026-propg-ict-programa-de-iniciacao-cientifica-e-tecnologica-integrada-a-pos-graduacao-stricto-sensu-ictpos-edital-geral-2026-2/) — _PROPG (iniciação científica, pós-graduação)_
+- 07/11 · [Eleições 2º/2026 – SET](https://exatas.ufpr.br/blog/eleicoes-2o-2026-set/) — _Setor de Ciências Exatas_
 - 23/10 · [A Universidade encontra a sociedade: o papel da extensão na Siepe 2026](https://ufpr.br/a-universidade-encontra-a-sociedade-o-papel-da-extensao-na-siepe-2026/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 22/10 · [Novidade na Siepe, Jornadas de Internacionalização promovem trocas sobre mobilidade acadêmica](https://ufpr.br/novidade-na-siepe-jornadas-de-internacionalizacao-promovem-trocas-sobre-mobilidade-academica/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 21/10 · [Webinar sobre “Editoração Científica, Ciência Aberta e Inteligência Artificial” tem transmissão da UFPR TV](https://ufpr.br/webinar-sobre-editoracao-cientifica-ciencia-aberta-e-inteligencia-artificial-tem-transmissao-da-ufpr-tv/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 20/10 · [Enfermagem UFPR oferece curso de extensão em primeiros socorros](https://ufpr.br/enfermagem-ufpr-oferece-curso-de-extensao-em-primeiros-socorros/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 20/10 · [Primeiras experiências na pesquisa e na extensão marcam a 17ª Siepe da UFPR](https://ufpr.br/primeiras-experiencias-na-pesquisa-e-na-extensao-marcam-a-17a-siepe-da-ufpr/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 20/10 · [Página atualizada: Laboratórios](https://matind.ufpr.br/laboratorios/) — _Coordenação de Matemática Industrial (páginas)_
-- 19/10 · [Semana de Ensino, Pesquisa e Extensão da UFPR começa nesta segunda-feira (19); veja a programação](https://ufpr.br/semana-de-ensino-pesquisa-e-extensao-da-ufpr-comeca-nesta-segunda-feira-19-veja-a-programacao/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 19/10 · [Siepe: Veja as novidades do Enec, maior evento de extensão e cultura da UFPR](https://ufpr.br/siepe-veja-as-novidades-do-enec-maior-evento-de-extensao-e-cultura-da-ufpr/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 06/11/2026.</sub>
+<sub>Painel atualizado automaticamente em 07/11/2026.</sub>
 <!-- painel:fim -->
 
 ---
