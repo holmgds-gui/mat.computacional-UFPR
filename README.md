@@ -7,16 +7,16 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 07/11/2026 (sábado) · semestre 2026-2 · 2º período
+**Hoje:** 08/11/2026 (domingo) · semestre 2026-2 · 2º período
 
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 05/12 | Último dia letivo do 2º semestre | em 28 dias |
-| 07/12–11/12 | Exames finais do 2º semestre | em 30 dias |
-| 07/12–12/02 | Período especial do 2º semestre | em 30 dias |
+| 05/12 | Último dia letivo do 2º semestre | em 27 dias |
+| 07/12–11/12 | Exames finais do 2º semestre | em 29 dias |
+| 07/12–12/02 | Período especial do 2º semestre | em 29 dias |
 
 ### 📊 Integralização
 
@@ -40,7 +40,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 - 23/10 · [A Universidade encontra a sociedade: o papel da extensão na Siepe 2026](https://ufpr.br/a-universidade-encontra-a-sociedade-o-papel-da-extensao-na-siepe-2026/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 22/10 · [Novidade na Siepe, Jornadas de Internacionalização promovem trocas sobre mobilidade acadêmica](https://ufpr.br/novidade-na-siepe-jornadas-de-internacionalizacao-promovem-trocas-sobre-mobilidade-academica/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 07/11/2026.</sub>
+<sub>Painel atualizado automaticamente em 08/11/2026.</sub>
 <!-- painel:fim -->
 
 ---
