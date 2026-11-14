@@ -7,17 +7,16 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 13/11/2026 (sexta) · semestre 2026-2 · 2º período
+**Hoje:** 14/11/2026 (sábado) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 13:30 CI1164 Introdução à Computação Científica
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 05/12 | Último dia letivo do 2º semestre | em 22 dias |
-| 07/12–11/12 | Exames finais do 2º semestre | em 24 dias |
-| 07/12–12/02 | Período especial do 2º semestre | em 24 dias |
+| 05/12 | Último dia letivo do 2º semestre | em 21 dias |
+| 07/12–11/12 | Exames finais do 2º semestre | em 23 dias |
+| 07/12–12/02 | Período especial do 2º semestre | em 23 dias |
 
 ### 📊 Integralização
 
@@ -41,7 +40,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 - 07/11 · [Eleições 2º/2026 – SET](https://exatas.ufpr.br/blog/eleicoes-2o-2026-set/) — _Setor de Ciências Exatas_
 - 23/10 · [A Universidade encontra a sociedade: o papel da extensão na Siepe 2026](https://ufpr.br/a-universidade-encontra-a-sociedade-o-papel-da-extensao-na-siepe-2026/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 13/11/2026.</sub>
+<sub>Painel atualizado automaticamente em 14/11/2026.</sub>
 <!-- painel:fim -->
 
 ---
