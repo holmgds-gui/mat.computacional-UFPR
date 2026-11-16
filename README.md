@@ -7,16 +7,17 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 15/11/2026 (domingo) · semestre 2026-2 · 2º período
+**Hoje:** 16/11/2026 (segunda) · semestre 2026-2 · 2º período
 
+**Aulas de hoje:** 07:30 TT081 Administração de Empresas · 15:30 TT080 Economia de Engenharia
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 05/12 | Último dia letivo do 2º semestre | em 20 dias |
-| 07/12–11/12 | Exames finais do 2º semestre | em 22 dias |
-| 07/12–12/02 | Período especial do 2º semestre | em 22 dias |
+| 05/12 | Último dia letivo do 2º semestre | em 19 dias |
+| 07/12–11/12 | Exames finais do 2º semestre | em 21 dias |
+| 07/12–12/02 | Período especial do 2º semestre | em 21 dias |
 
 ### 📊 Integralização
 
@@ -31,6 +32,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 ### 📡 Últimas do radar
 
+- 16/11 · [Confira como foi a participação da UFPR no Paraná Faz Ciência](https://ufpr.br/confira-como-foi-a-participacao-da-ufpr-no-parana-faz-ciencia/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 09/11 · [Novembro Negro reúne atividades culturais, debates e ações de valorização da população negra na UFPR](https://ufpr.br/novembro-negro-reune-atividades-culturais-debates-e-acoes-de-valorizacao-da-populacao-negra-na-ufpr/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 07/11 · [Achados da 17ª Siepe: diversidade dos trabalhos é a marca do evento](https://ufpr.br/achados-da-17a-siepe-diversidade-dos-trabalhos-e-a-marca-do-evento/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 07/11 · [UFPR lança edital para empresas integrarem Associação Tecnológica do Centro de Competência EMBRAPII UFPR em Hidrogênio](https://ufpr.br/ufpr-lanca-edital-para-empresas-integrarem-associacao-tecnologica-do-centro-de-competencia-embrapii-ufpr-em-hidrogenio/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
@@ -38,9 +40,8 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 - 07/11 · [9º Pitch Day Experience começa nesta quarta (4) com programação voltada à inovação](https://ufpr.br/9o-pitch-day-experience-comeca-nesta-quarta-4-com-programacao-voltada-a-inovacao-e-ao-desenvolvimento-profissional/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 07/11 · [Publicado Edital nº 10/2026 PROPG/ICT: Programa de Iniciação Científica e Tecnológica Integrada à Pós-graduação Stricto Sensu ICT+Pós – Edital Geral – 2026.2](https://ufpr.br/propg/publicado-edital-no-10-2026-propg-ict-programa-de-iniciacao-cientifica-e-tecnologica-integrada-a-pos-graduacao-stricto-sensu-ictpos-edital-geral-2026-2/) — _PROPG (iniciação científica, pós-graduação)_
 - 07/11 · [Eleições 2º/2026 – SET](https://exatas.ufpr.br/blog/eleicoes-2o-2026-set/) — _Setor de Ciências Exatas_
-- 23/10 · [A Universidade encontra a sociedade: o papel da extensão na Siepe 2026](https://ufpr.br/a-universidade-encontra-a-sociedade-o-papel-da-extensao-na-siepe-2026/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 15/11/2026.</sub>
+<sub>Painel atualizado automaticamente em 16/11/2026.</sub>
 <!-- painel:fim -->
 
 ---
