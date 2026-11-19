@@ -7,17 +7,17 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 18/11/2026 (quarta) · semestre 2026-2 · 2º período
+**Hoje:** 19/11/2026 (quinta) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 07:30 TT081 Administração de Empresas · 13:30 CI1164 Introdução à Computação Científica · 15:30 TT080 Economia de Engenharia
+**Aulas de hoje:** 07:30 CE009 Introdução à Estatística · 09:30 CF109 Física I · 15:30 CI1068 Circuitos Digitais
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 05/12 | Último dia letivo do 2º semestre | em 17 dias |
-| 07/12–11/12 | Exames finais do 2º semestre | em 19 dias |
-| 07/12–12/02 | Período especial do 2º semestre | em 19 dias |
+| 05/12 | Último dia letivo do 2º semestre | em 16 dias |
+| 07/12–11/12 | Exames finais do 2º semestre | em 18 dias |
+| 07/12–12/02 | Período especial do 2º semestre | em 18 dias |
 
 ### 📊 Integralização
 
@@ -32,16 +32,16 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 ### 📡 Últimas do radar
 
+- 19/11 · [UFPR abre consulta pública para definir prioridades de abertura de bases de dados](https://ufpr.br/ufpr-abre-consulta-publica-para-definir-prioridades-de-abertura-de-bases-de-dados/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
+- 19/11 · [UFPR oferece especialização em Inteligência Artificial voltada a professores](https://ufpr.br/ufpr-oferece-especializacao-em-inteligencia-artificial-voltada-a-professores/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
+- 19/11 · [Música erudita une Coro da UFPR e Camerata UTFPR no Campus Botânico e no Memorial de Curitiba](https://ufpr.br/musica-erudita-une-coro-da-ufpr-e-camerata-utfpr-no-campus-botanico-e-no-memorial-de-curitiba/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
+- 19/11 · [Férias da Secretaria da Coordenação – suspensão do atendimento](https://cmat.ufpr.br/ferias-da-secretaria-da-coordenacao-suspensao-do-atendimento/) — _Coordenação de Matemática (notícias)_
 - 16/11 · [Confira como foi a participação da UFPR no Paraná Faz Ciência](https://ufpr.br/confira-como-foi-a-participacao-da-ufpr-no-parana-faz-ciencia/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 09/11 · [Novembro Negro reúne atividades culturais, debates e ações de valorização da população negra na UFPR](https://ufpr.br/novembro-negro-reune-atividades-culturais-debates-e-acoes-de-valorizacao-da-populacao-negra-na-ufpr/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 07/11 · [Achados da 17ª Siepe: diversidade dos trabalhos é a marca do evento](https://ufpr.br/achados-da-17a-siepe-diversidade-dos-trabalhos-e-a-marca-do-evento/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 07/11 · [UFPR lança edital para empresas integrarem Associação Tecnológica do Centro de Competência EMBRAPII UFPR em Hidrogênio](https://ufpr.br/ufpr-lanca-edital-para-empresas-integrarem-associacao-tecnologica-do-centro-de-competencia-embrapii-ufpr-em-hidrogenio/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 07/11 · [Pesquisa e projeto de extensão da UFPR recebem destaque em Prêmio de Direitos Humanos](https://ufpr.br/pesquisa-e-projeto-de-extensao-da-ufpr-recebem-destaque-em-premio-de-direitos-humanos/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 07/11 · [9º Pitch Day Experience começa nesta quarta (4) com programação voltada à inovação](https://ufpr.br/9o-pitch-day-experience-comeca-nesta-quarta-4-com-programacao-voltada-a-inovacao-e-ao-desenvolvimento-profissional/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 07/11 · [Publicado Edital nº 10/2026 PROPG/ICT: Programa de Iniciação Científica e Tecnológica Integrada à Pós-graduação Stricto Sensu ICT+Pós – Edital Geral – 2026.2](https://ufpr.br/propg/publicado-edital-no-10-2026-propg-ict-programa-de-iniciacao-cientifica-e-tecnologica-integrada-a-pos-graduacao-stricto-sensu-ictpos-edital-geral-2026-2/) — _PROPG (iniciação científica, pós-graduação)_
-- 07/11 · [Eleições 2º/2026 – SET](https://exatas.ufpr.br/blog/eleicoes-2o-2026-set/) — _Setor de Ciências Exatas_
 
-<sub>Painel atualizado automaticamente em 18/11/2026.</sub>
+<sub>Painel atualizado automaticamente em 19/11/2026.</sub>
 <!-- painel:fim -->
 
 ---
