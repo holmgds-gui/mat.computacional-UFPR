@@ -7,16 +7,16 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 21/11/2026 (sábado) · semestre 2026-2 · 2º período
+**Hoje:** 22/11/2026 (domingo) · semestre 2026-2 · 2º período
 
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 05/12 | Último dia letivo do 2º semestre | em 14 dias |
-| 07/12–11/12 | Exames finais do 2º semestre | em 16 dias |
-| 07/12–12/02 | Período especial do 2º semestre | em 16 dias |
+| 05/12 | Último dia letivo do 2º semestre | em 13 dias |
+| 07/12–11/12 | Exames finais do 2º semestre | em 15 dias |
+| 07/12–12/02 | Período especial do 2º semestre | em 15 dias |
 
 ### 📊 Integralização
 
@@ -40,7 +40,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 - 07/11 · [Achados da 17ª Siepe: diversidade dos trabalhos é a marca do evento](https://ufpr.br/achados-da-17a-siepe-diversidade-dos-trabalhos-e-a-marca-do-evento/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 07/11 · [UFPR lança edital para empresas integrarem Associação Tecnológica do Centro de Competência EMBRAPII UFPR em Hidrogênio](https://ufpr.br/ufpr-lanca-edital-para-empresas-integrarem-associacao-tecnologica-do-centro-de-competencia-embrapii-ufpr-em-hidrogenio/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 21/11/2026.</sub>
+<sub>Painel atualizado automaticamente em 22/11/2026.</sub>
 <!-- painel:fim -->
 
 ---
