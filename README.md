@@ -7,17 +7,17 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 25/11/2026 (quarta) · semestre 2026-2 · 2º período
+**Hoje:** 26/11/2026 (quinta) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 07:30 TT081 Administração de Empresas · 13:30 CI1164 Introdução à Computação Científica · 15:30 TT080 Economia de Engenharia
+**Aulas de hoje:** 07:30 CE009 Introdução à Estatística · 09:30 CF109 Física I · 15:30 CI1068 Circuitos Digitais
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 05/12 | Último dia letivo do 2º semestre | em 10 dias |
-| 07/12–11/12 | Exames finais do 2º semestre | em 12 dias |
-| 07/12–12/02 | Período especial do 2º semestre | em 12 dias |
+| 05/12 | Último dia letivo do 2º semestre | em 9 dias |
+| 07/12–11/12 | Exames finais do 2º semestre | em 11 dias |
+| 07/12–12/02 | Período especial do 2º semestre | em 11 dias |
 
 ### 📊 Integralização
 
@@ -32,6 +32,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 
 ### 📡 Últimas do radar
 
+- 26/11 · [Página atualizada: ](https://matind.ufpr.br/) — _Coordenação de Matemática Industrial (páginas)_
 - 25/11 · [Cultura digital, inteligência artificial e democracia são temas de seminário do LabCD-UFPR em Curitiba](https://ufpr.br/cultura-digital-inteligencia-artificial-e-democracia-sao-temas-de-seminario-do-labcd-ufpr-em-curitiba/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 25/11 · [Página mudou: PROPG — editais de IC](https://ufpr.br/propg/ict/editais/) — _PROPG — editais de IC_
 - 19/11 · [UFPR abre consulta pública para definir prioridades de abertura de bases de dados](https://ufpr.br/ufpr-abre-consulta-publica-para-definir-prioridades-de-abertura-de-bases-de-dados/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
@@ -39,9 +40,8 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 - 19/11 · [Música erudita une Coro da UFPR e Camerata UTFPR no Campus Botânico e no Memorial de Curitiba](https://ufpr.br/musica-erudita-une-coro-da-ufpr-e-camerata-utfpr-no-campus-botanico-e-no-memorial-de-curitiba/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 - 19/11 · [Férias da Secretaria da Coordenação – suspensão do atendimento](https://cmat.ufpr.br/ferias-da-secretaria-da-coordenacao-suspensao-do-atendimento/) — _Coordenação de Matemática (notícias)_
 - 16/11 · [Confira como foi a participação da UFPR no Paraná Faz Ciência](https://ufpr.br/confira-como-foi-a-participacao-da-ufpr-no-parana-faz-ciencia/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
-- 09/11 · [Novembro Negro reúne atividades culturais, debates e ações de valorização da população negra na UFPR](https://ufpr.br/novembro-negro-reune-atividades-culturais-debates-e-acoes-de-valorizacao-da-populacao-negra-na-ufpr/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 25/11/2026.</sub>
+<sub>Painel atualizado automaticamente em 26/11/2026.</sub>
 <!-- painel:fim -->
 
 ---
