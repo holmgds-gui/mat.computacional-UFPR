@@ -7,17 +7,17 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 <!-- painel:inicio -->
 <!-- Gerado por scripts/painel.py. Não edite à mão. -->
 
-**Hoje:** 26/11/2026 (quinta) · semestre 2026-2 · 2º período
+**Hoje:** 27/11/2026 (sexta) · semestre 2026-2 · 2º período
 
-**Aulas de hoje:** 07:30 CE009 Introdução à Estatística · 09:30 CF109 Física I · 15:30 CI1068 Circuitos Digitais
+**Aulas de hoje:** 13:30 CI1164 Introdução à Computação Científica
 
 ### ⏳ Próximos 30 dias
 
 | Quando | O quê | Situação |
 |---|---|---|
-| 05/12 | Último dia letivo do 2º semestre | em 9 dias |
-| 07/12–11/12 | Exames finais do 2º semestre | em 11 dias |
-| 07/12–12/02 | Período especial do 2º semestre | em 11 dias |
+| 05/12 | Último dia letivo do 2º semestre | em 8 dias |
+| 07/12–11/12 | Exames finais do 2º semestre | em 10 dias |
+| 07/12–12/02 | Período especial do 2º semestre | em 10 dias |
 
 ### 📊 Integralização
 
@@ -41,7 +41,7 @@ Repositório acadêmico da minha graduação em **Bacharelado em Matemática Ind
 - 19/11 · [Férias da Secretaria da Coordenação – suspensão do atendimento](https://cmat.ufpr.br/ferias-da-secretaria-da-coordenacao-suspensao-do-atendimento/) — _Coordenação de Matemática (notícias)_
 - 16/11 · [Confira como foi a participação da UFPR no Paraná Faz Ciência](https://ufpr.br/confira-como-foi-a-participacao-da-ufpr-no-parana-faz-ciencia/) — _Portal UFPR (notícias gerais, extensão, SIEPE)_
 
-<sub>Painel atualizado automaticamente em 26/11/2026.</sub>
+<sub>Painel atualizado automaticamente em 27/11/2026.</sub>
 <!-- painel:fim -->
 
 ---
